@@ -1,0 +1,24 @@
+	<form action="" method="post">
+		<input type="hidden" value="<%FORWARD_VALUE%>" name="forward" />
+		<h2>Grundeinstellungen</h2>
+		<p>
+			Seitentitel:<br />
+			<input type="text" style="width:300px;" value="<%TITLE_VALUE%>" name="title" />
+		</p>
+		<p>
+			Keywords (Schlüsselworte):<br />
+			<input type="text" style="width:300px;" value="<%KEYWORDS_VALUE%>" name="keywords" />
+		</p>
+		<p>
+			Kurzbeschreibung des Inhaltes:<br />
+			<textarea style="width:300px; height:60px;" name="description"><%DESCRIPTION_VALUE%></textarea>
+		</p>
+
+		<p>
+			<input type="checkbox" name="show_form" id="show_form" value="1" <%SHOW_FORM_CHECKED%> /><label for="show_form"> Kontakt-Formular anzeigen?</label>
+		</p>
+
+		<p>
+			<input type="submit" name="send" value="Speichern" />
+		</p>
+	</form>

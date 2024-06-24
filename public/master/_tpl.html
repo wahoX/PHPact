@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de-DE">
+<head>
+	<meta charset="utf-8">
+	<title><%TITLE%></title>
+	<meta name='title' content='<%TITLE%>'>
+	<meta name='description' content='<%DESCRIPTION%>'>
+	<meta name='keywords' content='<%KEYWORDS%>'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="generator" content="wahoX MVC">
+	<meta name="author" content="wahoX">
+	<meta name="publisher" content="wahoX">
+	<meta name="copyright" content="wahoX">
+	<meta name="page-topic" content="Dienstleistung">
+	<meta property="og:title" content="<%TITLE%>">
+	<meta property="og:type" content="article">
+	<link rel="canonical" href="<%CANONICAL%>">
+	<meta property="og:url" content="<%SELFURL%>">
+	<meta property="og:site_name" content="<%TITLE%>">
+	<meta property="og:description" content="<%DESCRIPTION%>">
+	<meta name="google-adsense-account" content="ca-pub-3570829719048928">
+	<link rel="apple-touch-icon" sizes="57x57" href="[[LinkTo:res/icons/apple-icon-57x57.png]]">
+	<link rel="apple-touch-icon" sizes="60x60" href="[[LinkTo:res/icons/apple-icon-60x60.png]]">
+	<link rel="apple-touch-icon" sizes="72x72" href="[[LinkTo:res/icons/apple-icon-72x72.png]]">
+	<link rel="apple-touch-icon" sizes="76x76" href="[[LinkTo:res/icons/apple-icon-76x76.png]]">
+	<link rel="apple-touch-icon" sizes="114x114" href="[[LinkTo:res/icons/apple-icon-114x114.png]]">
+	<link rel="apple-touch-icon" sizes="120x120" href="[[LinkTo:res/icons/apple-icon-120x120.png]]">
+	<link rel="apple-touch-icon" sizes="144x144" href="[[LinkTo:res/icons/apple-icon-144x144.png]]">
+	<link rel="apple-touch-icon" sizes="152x152" href="[[LinkTo:res/icons/apple-icon-152x152.png]]">
+	<link rel="apple-touch-icon" sizes="180x180" href="[[LinkTo:res/icons/apple-icon-180x180.png]]">
+	<link rel="icon" type="image/png" sizes="192x192" href="[[LinkTo:res/icons/android-icon-192x192.png]]">
+	<link rel="icon" type="image/png" sizes="32x32" href="[[LinkTo:res/icons/favicon-32x32.png]]">
+	<link rel="icon" type="image/png" sizes="96x96" href="[[LinkTo:res/icons/favicon-96x96.png]]">
+	<link rel="icon" type="image/png" sizes="16x16" href="[[LinkTo:res/icons/favicon-16x16.png]]">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#003456">
+	<meta name="msapplication-TileImage" content="[[LinkTo:res/icons/ms-icon-144x144.png]]">
+	<meta name="theme-color" content="#003456">
+
+	<link rel="shortcut icon" type="image/x-icon" href="[[LinkTo:res/images/favicon.ico]]">
+
+	<%CSS_INCLUDES%>
+	<style>
+		<%CSS_INLINE%>
+	</style>
+
+</head>
+
+<body class="stretched">
+	<div id="wrapper" class="clearfix">
+		<%HEADER%>
+		<%CONTENT%>
+		<%FOOTER%>
+	</div>
+
+	<!-- Go To Top -->
+	<div id="gotoTop" class="icon-line-chevrons-up bg-color h-bg-color-2 shadow rounded-circle"></div>
+	<script>
+		    var rootdir = '<%ROOT%>';
+		    var site_id = '<%SITE_ID%>';
+	</script>
+	<%JS_INCLUDES%>
+	<script type="text/javascript" id="f2ac51f4c59265a0c022339c16119936" src="//livezilla.wahox.com/script.php?id=f2ac51f4c59265a0c022339c16119936" defer></script>
+	<script>
+		<%JS_INLINE%>
+		$(function() {
+			var lastScrollTop = 0;
+			window.addEventListener("scroll", function(event){
+				var st = $(this).scrollTop();
+				if (st > lastScrollTop){
+					jQuery('#header.sticky-on-scrollup').removeClass('show-sticky-onscroll'); // Down Scroll
+				} else {
+					jQuery('#header.sticky-on-scrollup').addClass('show-sticky-onscroll'); // Up Scroll
+				}
+				lastScrollTop = st;
+			});
+			$('a.secureemail').each(function(){
+				e = this.rel.replace('/','@');
+				this.href = 'mailto:' + e;
+				$(this).text(e);
+			});
+			$('.services-grid .feature-box').hover(
+			  function () {
+			    $(this).addClass("dark");
+			  },
+			  function () {
+			    $(this).removeClass("dark");
+			  }
+			);
+
+			<%ONLOAD%>
+		});
+		var _paq = window._paq = window._paq || [];
+  		/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  		_paq.push(['trackPageView']);
+  		_paq.push(['enableLinkTracking']);
+		_paq.push(['setSiteId', '1']);
+		_paq.push(["disableCookies"]);
+		_paq.push(["setDoNotTrack", true]);
+		_paq.push(["setDomains", ["*.wahox.com"]]);
+  		(function() {
+    		var u="//matomo.wahox.com/";
+    		_paq.push(['setTrackerUrl', u+'matomo.php']);
+    		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    		g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  		})();
+</script>
+<!-- End Matomo Code -->
+</body>
+</html>

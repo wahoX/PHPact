@@ -1,0 +1,30 @@
+<%WIDTH%>:::::<%HEIGHT%>:::::<%START_X%>:::::<%START_Y%>:::::<%END_X%>:::::<%END_Y%>:::::<%FILENAME%>:::::
+
+<img src='[[LinkTo:res/uploads/tmp/<%FILENAME%>]]' id="thumbnail" alt="Create Thumbnail" style="float: left; margin-right: 10px; width: 500px;" />
+<%FORM_START%>
+	<input type="hidden" name="image" value="<%FILENAME%>" />
+	<input type="hidden" id="x1" name="x1" value="<%START_X%>" />
+	<input type="hidden" id="y1" name="y1" value="<%START_Y%>" />
+	<input type="hidden" id="x2" name="x2" value="<%END_X%>" />
+	<input type="hidden" id="y2" name="y2" value="<%END_Y%>" />
+	<input type="hidden" id="w" name="w" value="<%WIDTH%>" />
+	<input type="hidden" id="h" name="h" value="<%HEIGHT%>" />
+	<input type="hidden" id="wf" name="wf" value="<%FINAL_WIDTH%>" />
+	<input type="hidden" id="hf" name="hf" value="<%FINAL_HEIGHT%>" />
+<%FORM_END%>
+
+<%[FORM_START]%>
+<form method="post" id="form_createimage_final" class="adminform setting_form" action="[[LinkTo:ajax/imageupload/createimage]]">
+<%[/FORM_START]%>
+
+<%[FORM_END]%>
+	<input type="hidden" id="menu_id" name="menu_id" value="<%MENU_ID%>" />
+	<input id="avatar_upload_submit" type="submit" value="Bild speichern" />
+</form>
+<%[/FORM_END]%>
+
+<!--
+<div style="border:1px #e5e5e5 solid; float:left; position:relative; overflow:hidden; width:128px; height:128px;">
+	<img src="[[LinkTo:res/images/user/avatar/tmp/<%FILENAME%>]]" style="position: relative;" alt="Thumbnail Preview" />
+</div>
+-->

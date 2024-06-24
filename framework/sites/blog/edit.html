@@ -1,0 +1,86 @@
+<div class="maincontent">
+    
+    <div  class="container pt-1">
+
+
+
+<form class="col-xs-12" style="border:0; background:transparent;" id="form_blog" enctype="multipart/form-data" action="" method="post">
+    <h3 style="margin-top:15px;"><%ACTION%> <%{as:4}%><span style="font-size: 12px;"><%AUTHOR%></span><%{/as}%></h3>
+    <hr /> 
+
+	<input type="hidden" value="<%ID_VALUE%>" name="id" />
+
+	<div class="<%TITLE_CLASS%>">
+		<label for="title" class="large_label_input">Überschrift:</label><br />
+		<div class="formerror_message"><%TITLE_MESSAGE%></div>
+		<input type="text" maxlength="80" value="<%TITLE_VALUE%>" name="title" id="title" class="form-control <%TITLE_VALIDATE%>" tabindex="" />
+		<br />
+		<div class="register_break"></div>              
+	</div>
+	
+	<div class="<%DESCRIPTION_CLASS%>">
+		<label for="description" class="large_label_input">kurze Zusammenfassung:</label>
+		<div class="formerror_message"><%DESCRIPTION_MESSAGE%></div>
+		<textarea name="description" id="description" class="<%DESCRIPTION_VALIDATE%> form-control"><%DESCRIPTION_VALUE%></textarea>
+		<br />
+		<div class="register_break"></div>              
+	</div>
+
+	<div class="<%TEXT_CLASS%>">
+		<label for="text" class="label_input">Text:</label>
+		<div class="formerror_message"><%TEXT_MESSAGE%></div>
+        <div>
+            <textarea name="text" id="text" style="height:4em;" class="<%TEXT_VALIDATE%> form-control"><%TEXT_VALUE%></textarea>
+        </div>
+		<br />
+		<div class="register_break"></div>              
+	</div>
+	
+	<div class="">
+		<label for="blogimage" class="large_label_input">Bild-Upload:</label><br />
+		Hier können Sie für den Beitrag ein passendes Bild auswählen.
+		<div class="formerror_message"><%BLOGIMAGE_MESSAGE%></div>
+		<input type="file" class="form-control" name="blogimage" id="blogimage" />
+		<%IMAGE%>
+		<br />
+		<div class="register_break"></div>              
+	</div>
+		
+	<%[IMAGE]%>
+		Aktuelles Bild:<br />
+		<img src="[[LinkTo:res/uploads/images/blog/<%IMAGE%>_k.jpg]]" /><br />
+	<%[/IMAGE]%>
+		
+
+	
+
+	
+
+	<div class="<%TAGS_CLASS%>" id="tagedit">
+		<div class="formerror_message"><%TAGS_MESSAGE%></div>
+		<label for="" class="label_input">Schlüsselworte (max: 10):</label>
+		<%TAGS%>
+		<%[TAG]%>
+	            <input name="tags[]" class="form-control tag" value="<%VALUE%>" />
+		<%[/TAG]%>		
+		<br />
+		<div class="register_break"></div>              
+	</div>
+
+	<div class="hidden <%COMMENTS_CLASS%>">
+		<div class="formerror_message"><%COMMENTS_MESSAGE%></div>
+		<input type="checkbox" value="0" name="comments" id="comments" <%COMMENTS_1_CHECKED%> />
+		<label for="comments" class="large_label_input">Kommentare sind erlaubt</label><br />
+		<br />
+		<div class="register_break"></div>              
+	</div>
+
+&nbsp;<br />
+	
+	<input type="submit" name="send" class="btn btn-success" value="Blog-Beitrag Speichern" />
+</form>
+
+
+
+</div>
+</div>

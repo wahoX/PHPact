@@ -1,0 +1,167 @@
+<div class="col-xs-12">
+<%[Subnavi]%>
+<!-- SubTemplate für die Navigationsleiste über dem Content -->
+    <div id="subnavi_title" class="typeface-js">[[:Deine Lieferadressen]]</div>
+<%[/Subnavi]%>
+
+<%CONTENT%>
+
+<%[LIST]%>
+<!-- SubTemplate für die Auflistung der Liederadressen -->
+        <h3 style="padding-left: 0; margin-bottom:15px;">[[:Ihre aktuellen Adressen]]</h3>
+
+		<div class="alert alert-info">
+			Hier können Sie eine oder mehrere Adressen dauerhaft hinterlegen, die Sie dann als Versandadresse für Ihre Bestellungen verwenden können.<br />
+			Wenn Sie eine Adresse als Standard-Adresse anlegen, wird diese beim Login automatisch als Lieferadresse gewählt.
+			<br /><br />
+			<a class="btn btn-success" href="[[LinkTo:konto/addresses/new]]" title="Neue Adresse anlegen"><span class="glyphicon glyphicon-plus"></span> Neue Adresse anlegen</a>		
+			<a class="btn btn-default" href="[[LinkTo:konto/profiledit]]" title="Zurück zum Profil"><span class="glyphicon glyphicon-arrow-left"></span> Zurück zum Profil</a>
+		</div>
+		
+
+	<%ADDRESSES%>			
+<%[/LIST]%>
+
+</div>
+
+<div class="clearfix"></div>
+&nbsp;<br />
+<%[ADDRESS]%>
+<!-- SubTemplate für eine Adresse -->
+	<div class="panel panel-<%CSS_CLASS%>">
+		<div class="panel-heading">
+			<a type="button" aria-label="Löschen" class="close trash glyphicon glyphicon-trash" href="#" onclick="redirectConfirm('[[LinkTo:konto/addresses/delete/<%ROWID%>]]', '[[:Möchten Sie die Adresse wirklich löschen?]]'); return false;" title="[[:Adresse löschen]]"><span aria-hidden="true"></span></a>
+			<a type="button" aria-label="Bearbeiten" class="close edit glyphicon glyphicon-pencil" href="[[LinkTo:konto/addresses/edit/<%ROWID%>]]" title="[[:Adresse bearbeiten]]"><span aria-hidden="true"></span></a>
+			<a type="button" aria-label="Favorit" class="close star glyphicon glyphicon-star" href="[[LinkTo:konto/addresses/set_standard/<%ROWID%>]]" title="[[:als Standardadresse festlegen]]" style="display: <%IS_STANDARD_SHOW%>;"><span aria-hidden="true"></span></a>
+			<h4><%SHORTCUT%> <span class="standard" style="display: <%IS_STANDARD_HIDE%>;">([[:Standardadresse]])</span></h4>    
+		</div>
+		
+        <div class="panel-body">
+			<div class="col-sm-6 row">
+				<label class="forename">[[:Vorname]]:</label> <%FORENAME%><br />
+				<label class="name">[[:Name]]:</label> <%NAME%><br />
+				<label class="company">[[:Firma]]:</label> <%COMPANY%><br />
+				<label class="position">[[:Lage / Etage]]:</label> <%POSITION%>
+			</div>
+
+			<div class="col-sm-6 row">
+				<label class="street">[[:Strasse]]:</label> <%STREET%> <%STREETNUMBER%><br /> 
+				<label class="town">[[:PLZ / Ort]]:</label> <%ZIP%> <%CITY%><br />
+				<label class="mail">[[:E-Mail]]:</label> <%EMAIL%><br />
+				<label class="phone">[[:Telefon]]:</label> <%PREPHONE%>-<%PHONE%>
+			</div>
+			<div class="clearfix"></div>
+           
+        </div>
+    </div>
+    <div class="clearfix"></div>
+<%[/ADDRESS]%>
+
+
+
+<%[FORM]%>
+<!-- SubTemplate für das Formular -->
+    <form name="addresses_form" id="addresses_form" method="post" action="[[LinkTo:konto/addresses/<%FORM_ACTION%>/<%ROWID_VALUE%>]]">
+
+
+        <%ADDRESSES_HEADLINE%>
+		
+		<div class="panel panel-default">
+			<div class="<%SHORTCUT_CLASS%> panel-heading">[[:Bezeichnung]]<span class="asterisk">*</span></div>
+			<div class="panel-body">
+				Bezeichnung der Adresse - z.B. &quot;zu Hause&quot; oder &quot;Büro&quot;
+				<input placeholder="zu Hause / Büro / ..." type="text" maxlength="" class="form-control <%SHORTCUT_VALIDATE%>" value="<%SHORTCUT_VALUE%>" name="shortcut" id="address_shortcut" tabindex="" />
+                <div class="formerror_message"><%SHORTCUT_MESSAGE%></div>
+			</div>
+        </div> 
+
+		
+		<div class="panel panel-success">
+			<div class="panel-heading">[[:Name und Anschrift]]</div>
+			<div class="panel-body">
+			
+				<div class="<%TITLE_CLASS%> form-group">
+					<label for="address_title_herr">[[:Anrede]]:</label>
+						<div>
+							<label for="address_title_herr"><input type="radio" value="1" name="title" id="address_title_herr" checked="checked" <%TITLE_SELECTED_1%> /> [[:Herr]]</label>
+						</div>
+						<div>
+							<label for="address_title_frau"><input type="radio" value="2" name="title" id="address_title_frau" <%TITLE_SELECTED_2%> /> [[:Frau]]</label>
+						</div>
+				</div> 
+				
+				<div class="form-group <%FORENAME_CLASS%>">
+					<label for="address_forename">[[:Vorname]]<span class="asterisk">*</span>:</label>
+						<input placeholder="Vorname" type="text" maxlength="" class="<%FORENAME_VALIDATE%> form-control" value="<%FORENAME_VALUE%>" name="forename" id="address_forename" tabindex="" />
+						<div class="formerror_message"><%FORENAME_MESSAGE%></div>
+				</div> 
+			
+				<div class="form-group <%NAME_CLASS%>">        
+					<label for="address_name" class="label_input">[[:Nachname]]<span class="asterisk">*</span>:</label>
+						<input placeholder="Nachname" type="text" maxlength="" class="<%NAME_VALIDATE%> form-control" value="<%NAME_VALUE%>" name="name" id="address_name" tabindex="" />
+						<div class="formerror_message"><%NAME_MESSAGE%></div>
+				</div> 
+			
+				<div class="form-group <%COMPANY_CLASS%>">           
+					<label for="address_company" class="label_input">[[:Firma]]:</label>
+						<input placeholder="Firma" type="text" maxlength="" value="<%COMPANY_VALUE%>" name="company" id="address_company" class="form-control" tabindex="" />
+				</div>
+			
+				<label for="address_street" class="small_label_input">[[:Straße / Hausnummer]] <span class="asterisk">*</span>:</label><br />
+				<div class="input-group <%STREET_CLASS%> <%STREET_NUMBER_CLASS%>">        
+					<input type="text" placeholder="Straße" maxlength="" class="<%STREET_VALIDATE%> form-control" value="<%STREET_VALUE%>" name="street" id="address_street" tabindex="" />
+					<input type="text" placeholder="HausNr." maxlength="" class="<%STREET_NUMBER_VALIDATE%> form-control" value="<%STREET_NUMBER_VALUE%>" name="street_number" id="address_street_number" tabindex="" />
+				</div>
+			
+				<label for="address_zip" class="small_label_input">[[:PLZ / Ort]] <span class="asterisk">*</span>:</label><br />
+				<div class="input-group <%CITY_CLASS%> <%ZIP_CLASS%>">         
+					<input type="text" placeholder="PLZ" maxlength="5" class="<%ZIP_VALIDATE%> form-control" value="<%ZIP_VALUE%>" name="zip" id="address_zip" tabindex="" />
+					<input type="text" placeholder="Ort" maxlength="" class="<%CITY_VALIDATE%> form-control" value="<%CITY_VALUE%>" name="city" id="address_city" tabindex="" />
+				</div>
+				
+		        <div class="form-group <%POSITION_CLASS%>">        
+					<label for="address_position" class="label_input">[[:Lage]]:</label>
+						<input placeholder="Lage / Etage" type="text" maxlength="" class="<%POSITION_VALIDATE%> form-control" value="<%POSITION_VALUE%>" name="position" id="address_position" tabindex="" />
+				</div>
+
+				<label for="address_prephone" class="small_label_input">[[:Vorwahl / Telefon]]:</label><br />
+				<div class="input-group <%PREPHONE_CLASS%> <%PHONE_CLASS%>">         
+					<input placeholder="Vorwahl" type="text" maxlength="6" class="<%PREPHONE_VALIDATE%> form-control" value="<%PREPHONE_VALUE%>" name="prephone" id="address_prephone" tabindex="" />
+					<input placeholder="Rufnummer" type="text" maxlength="20" class="<%PHONE_VALIDATE%> form-control" value="<%PHONE_VALUE%>" name="phone" id="address_phone" tabindex="" />
+				</div>
+
+				<div class="form-group <%EMAIL_CLASS%>">  <br />       
+						<label for="address_email" class="label_input">[[:E-Mail]]:</label>
+							<input placeholder="E-Mail Adressse" type="text" maxlength="" class="<%EMAIL_VALIDATE%> form-control" value="<%EMAIL_VALUE%>" name="email" id="address_email" tabindex="" />
+							<div class="formerror_message"><%EMAIL_MESSAGE%></div>
+				</div>
+
+			</div>
+		</div>
+    
+        <input type="hidden" name="rowid" value="<%ROWID_VALUE%>" readonly="readonly" />        
+		
+		<div class="col-xs-12">
+			<input class="btn btn-success" type="submit" name="send" id="addresses_submit" value="[[:jetzt absenden]]" />
+			<a class="btn btn-danger" href="[[LinkTo:konto/addresses]]" title="zurück zur Übersicht">abbrechen</a>
+			<br />&nbsp;
+		</div>       
+    </form>
+<%[/FORM]%>
+
+
+
+
+<%[FORM_NEW_HEADLINE]%>
+<!-- SubTemplate für die Überschriften im Formular -->
+    <h3 style="padding-left: 0; margin-bottom:15px;">[[:Neue Adresse erstellen]]</h3>
+<%[/FORM_NEW_HEADLINE]%>
+
+
+
+
+<%[FORM_EDIT_HEADLINE]%>
+<!-- SubTemplate für die Überschriften im Formular -->
+    <h3 style="padding-left: 0; margin-bottom:15px;">[[:Adresse bearbeiten]]</h3>
+<%[/FORM_EDIT_HEADLINE]%>
+

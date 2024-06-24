@@ -1,0 +1,87 @@
+<input name="name" id="user_name" value="<%NAME_VALUE%>" class="<%NAME_VALIDATE%> form-control" />
+
+<a href="[[LinkTo:user/login]]">Login</a>
+
+<h2>Kontaktformular</h2>
+		<form name="contact_form" id="contact_form" method="post" action="[[LinkTo:form/contact]]">
+			<input type="hidden" name="topic" value="<%TOPIC%>" />
+            
+   			<h3><%SUBTITLE%></h3>
+            <hr /> 
+
+			<div class="<%TITLE_CLASS%>">
+                <label for="contact_title" class="label_input">[[:Anrede]]:</label>
+                <select name="title" id="contact_title" size="1" class="form-control">
+					<option value="">-- Bitte wählen --</option>
+					<option value="Herr" <%TITLE_SELECTED_HERR%>>Herr</option>
+					<option value="Frau" <%TITLE_SELECTED_FRAU%>>Frau</option>
+					<option value="Firma" <%TITLE_SELECTED_FIRMA%>>Firma</option>
+				</select>
+            </div>
+			&nbsp;<br />
+
+            <div class="<%VORNAME_CLASS%>">        
+                <div class="formerror_message"><%VORNAME_MESSAGE%></div>
+                <label for="contact_vorname" class="label_input">[[:Vorname]]:</label>
+                <span class="asterisk">*</span>
+                <input type="text" value="<%VORNAME_VALUE%>" name="vorname" id="contact_vorname" class="<%VORNAME_VALIDATE%> form-control" />
+            </div>
+			&nbsp;<br />
+
+            <div class="<%NAME_CLASS%>">        
+                <div class="formerror_message"><%NAME_MESSAGE%></div>
+                <label for="contact_name" class="label_input">[[:Name]]:</label>
+                <span class="asterisk">*</span>
+                <input type="text" value="<%NAME_VALUE%>" name="name" id="contact_name" class="<%NAME_VALIDATE%> form-control" />
+            </div>
+			&nbsp;<br />
+            
+            <div class="<%CITY_CLASS%>">         
+                <div class="formerror_message"><%CITY_MESSAGE%></div>
+                <label for="contact_city" class="label_input">[[:Ort]]:</label>
+                <input type="text" value="<%CITY_VALUE%>" name="city" id="contact_city" class="<%CITY_VALIDATE%> form-control" />
+            </div> 
+			&nbsp;<br />
+
+            <div class="<%EMAIL_CLASS%>">         
+                <div class="formerror_message"><%EMAIL_MESSAGE%></div>
+                <label for="contact_email" class="label_input">[[:E-Mail]]:</label>
+				<span class="asterisk">*</span>
+                <input type="text" value="<%EMAIL_VALUE%>" name="email" id="contact_email" class="<%EMAIL_VALIDATE%> form-control" />
+            </div> 
+			&nbsp;<br />
+
+            <div class="<%PHONE_CLASS%>">         
+                <div class="formerror_message"><%PHONE_MESSAGE%></div>
+                <label for="contact_phone" class="label_input">[[:Telefon]]:</label>
+                <input type="text" value="<%PHONE_VALUE%>" name="phone" id="contact_phone" class="<%PHONE_VALIDATE%> form-control" tabindex="" />
+            </div> 
+			&nbsp;<br />
+
+			<div class="bs">
+				<div class="<%SUBJECT_CLASS%>">         
+					<div class="formerror_message"><%SUBJECT_MESSAGE%></div>
+					<label for="contact_subject" class="label_input">[[:Subject]]:</label>
+					<input type="text" value="<%SUBJECT_VALUE%>" name="subject" id="contact_subject" class="<%SUBJECT_VALIDATE%> form-control" />
+				</div> 
+				&nbsp;<br />
+
+				<div class="<%MESSAGE_CLASS%>">         
+					<div class="formerror_message"><%MESSAGE_MESSAGE%></div>
+					<label for="contact_message" class="label_input label_textarea">[[:Message]]:</label>
+					<textarea id="contact_message" name="message" class="<%MESSAGE_VALIDATE%> form-control" style="height:100px;"><%MESSAGE_VALUE%></textarea>
+				</div> 
+				&nbsp;<br />
+			</div>
+
+            <div class="<%XHISVG_CLASS%>">         
+                <div class="formerror_message"><%XHISVG_MESSAGE%></div>
+                <label for="contact_xhisvg" class="label_input label_textarea">[[:Anliegen]]:</label>
+				<textarea id="contact_xhisvg" name="xhisvg" class="<%XHISVG_VALIDATE%> form-control" style="height:100px;"><%XHISVG_VALUE%></textarea>
+            </div> 
+			&nbsp;<br />
+
+            <input type="hidden" value="1" name="topic_id" /> 
+       		<input type="submit" name="contact_submit" class="btn btn-success" value="[[:Anfrage absenden]]" />
+        </form>                  
+        <div class="clearfix"></div>

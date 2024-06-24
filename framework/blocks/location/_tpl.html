@@ -1,0 +1,13 @@
+<div class="col-xs-12" id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+	Sie sind hier:
+	<%LOCATIONS%>
+</div>
+
+<%[LOCATION]%>
+    <div <%CHILD%> itemscope itemtype="http://data-vocabulary.org/Breadcrumb" style="display:inline;">
+		<a href="[[LinkTo:<%URL%>]]" title="<%TITLE%>" itemprop="url" class="grey">
+			<span class="label label-default" itemprop="title"><%TITLE%></span>
+		</a>
+	<% Hier kein </div>, das wird vom Controller eingefügt. %>
+<%[/LOCATION]%>
+

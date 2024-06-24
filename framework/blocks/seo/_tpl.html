@@ -1,0 +1,27 @@
+<div id="seowrapper" >
+	<a href="#" id="toggleseo" class="btn btn-info" style="margin: 15px 0;">Suchmaschinenoptimierung</a>
+	<div id="seo">
+		<form action="[[LinkTo:ajax/cms/saveseo]]" method="post" class="form" id="seoform" style="border:0; padding:0; margin:0 0 15px 0; background:transparent;">
+			<input type="hidden" name="item_id" value="<%ID%>" />
+			<div id="seo_url_wrapper">
+				<label for="seo_url" class="label_input">URL-Umschreibung:</label>
+				<input type="text" name="seo_url" id="seo_url" value="<%URL%>" class="<%SEO_URL_VALIDATE%> form-control" /><br />
+				<div style="display:none;" id="seo_url_errormessage">Diese URL wird bereits von einer anderen Seite verwendet.<br />&nbsp;</div>
+			</div>
+			
+			<label for="seo_title" class="label_input">Seitentitel:</label>
+			<input type="text" name="seo_title" id="seo_title" value="<%TITLE%>" class="form-control" /><br />
+			
+			<label for="seo_description" class="label_input">Seitenbeschreibung:</label>
+			<input type="text" name="seo_description" id="seo_description" value="<%DESCRIPTION%>" class="form-control" /><br />
+			
+			<label for="seo_keywords" class="label_input">Keywords:</label>
+			<input type="text" name="seo_keywords" id="seo_keywords" value="<%KEYWORDS%>" class="form-control" /><br />
+			
+			<input type="submit" class="btn btn-success" value="Speichern" id="seo_save" />
+			
+			<div id="seo_success" style="display:none; color:#587f18;"><img src="/res2/images/ok.png" alt="ok " />Die Daten wurden gespeichert.</div>
+		</form>
+	</div>
+	<div class="clearfix"></div>
+</div>

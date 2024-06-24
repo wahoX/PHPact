@@ -1,0 +1,106 @@
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h2 class="panel-title">Menü bearbeiten</h2>
+	</div>
+	<div class="panel-body">
+		<form name="form_menu" id="form_menu" onsubmit="saveNavi(); return false;" action="" method="post">
+			Um die Sortierung zu ändern, ziehen Sie die Menüpunkte mit der Maus in die gewünschte Reihenfolge und klicken Sie anschließend auf "Navigation speichern".<br />
+			<div>
+				<ul id="naviAdmin">
+					<%MENUITEMS%>
+				</ul>
+				
+				<input class="btn btn-success" type="submit" value="Navigation speichern" /><br />
+				<div class="alert alert-success" id="saveSuccess" style="display:none;">Die Navigation wurde gespeichert.</div>
+				<br /><br />
+			</div>
+		</form>
+	</div>
+</div>
+
+<%[MENUITEM]%>
+		<li id="item_<%ID%>" class="alert alert-<%INVISIBLE%> <%LEVEL%> ">
+			<!-- <a href="[[LinkTo:<%URL%>]]" title="<%TITLE%>"><%NAME%></a> - -->
+			<span class="glyphicon glyphicon-move"></span>
+			<input class="form-control" type="text" name="name_<%ID%>" value="<%NAME%>" />
+			<%MENUITEM_LEVEL%>
+			<input type="hidden" name="visible_<%ID%>" id="visible_<%ID%>" value="<%VISIBLE%>" />
+			<span style="  float: right; padding: 8px;">
+				<a href="#" onclick='toggleVisibility(<%ID%>); return false;' id='togglevisibility_<%ID%>' title="Menüpunkt <%VISIBLE_TEXT%>">
+<!-- 					<img src='[[LinkTo:res/images/<%VISIBLE_ICON%>.png]]' id='image_visible_<%ID%>' alt='Menüpunkt <%VISIBLE_TEXT%>' /> -->
+					<span class="glyphicon glyphicon-<%VISIBLE_ICON%>" id='image_visible_<%ID%>'></span>
+				</a>
+				<%EDIT%>
+				<a href="#" onclick='redirectConfirm("[[LinkTo:cms/deletemenu/<%URL%>]]", "Soll der Menüpunkt \"<%NAME%>\" wirklich gelöscht werden?"); return false;' title="löschen">
+					<span class="glyphicon glyphicon-trash red"></span>
+				</a>
+			</span>
+		</li>
+<%[/MENUITEM]%>
+
+<%[MENUITEM_LEVEL]%>
+			<input type="hidden" name="level_<%ID%>" id="level_<%ID%>" value="<%LEVEL_NUM%>" />
+			<a href="#" id="level_down_<%ID%>" class="level_down" title="Menüpunkt (zum Hauptmenüpunkt machen)">
+				<span class="glyphicon glyphicon-arrow-left"></span>
+			</a>
+			<a href="#" id="level_up_<%ID%>" class="level_up" title="Menüpunkt einrücken (zum Untermenüpunkt machen)">
+				<span class="glyphicon glyphicon-arrow-right"></span>
+			
+			</a>
+<%[/MENUITEM_LEVEL]%>
+
+<%[EDITITEM]%>
+				<a href="[[LinkTo:<%URL%>]]">
+					<span class="glyphicon glyphicon-pencil"></span>
+				</a>
+<%[/EDITITEM]%>
+
+<script type="text/javascript">
+	// <![CDATA[
+	$("#naviAdmin").sortable({
+		axis: 'y',
+		forcePlaceholderSize: true,
+		placeholder: 'placeholder',
+		distance: 10,
+		cursor: 'move'
+	});
+	//Sortable.create('naviAdmin');
+	// ]]>
+</script>
+
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h2 class="panel-title">Neuen Menüpunkt anlegen</h2>
+	</div>
+	<div class="panel-body">	
+		<form id="admin_menu_form" class="form adminform" action="" method="post">
+			<div class="form-group">
+				 <label for="input_menuname">Name des Menüpunktes:</label>
+				<input type="text" value="<%INPUT_MENUNAME_VALUE%>" id="input_menuname" class="form-control validate[required]" name="input_menuname" />
+				<%INPUT_MENUNAME_MESSAGE%>
+			</div>
+			<div class="form-group">
+				<label for="input_menuname">Name des Menüpunktes:</label>
+				<select name="input_modul" size="1" class="form-control validate[required]" id="input_modul">
+		<!--			<option value="">-- Bitte Modul auswählen --</option> -->
+					<option value="cms">Inhaltsseite</option>
+		<!--
+					<option value="shop">Shopseite</option>
+					<option value="mandant">Mandanten-Information</option>
+					<option value="kontakt">Kontakt-Formular</option>
+					<option value="immo">Immobilien-Seite</option>
+		-->
+				</select><%INPUT_MODUL_MESSAGE%>
+			</div>
+
+			<div class="checkbox">
+			<label>
+			  <input type="checkbox" name="show_form" id="show_form" value="1" /> Kontakt-Formular anzeigen?
+			</label>
+		  </div>
+
+			<input class="btn btn-success" type="submit" name="send" value="Speichern" />
+
+		</form>
+	</div>
+</div>

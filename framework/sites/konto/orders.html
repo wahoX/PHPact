@@ -1,0 +1,34 @@
+<div class="col-xs-12">
+    <h3 style="padding-left: 0; margin-bottom:15px;">Ihre letzten Bestellungen</h3>
+	<div class="alert alert-info">
+		In dieser Übersicht sehen Sie Ihre letzten Bestellungen. Es werden Ihnen bis zu 10 Bestellungen angezeigt.<br /><br />
+		<a class="btn btn-default" href="[[LinkTo:konto/profiledit]]" title="Zurück zum Profil"><span class="glyphicon glyphicon-arrow-left"></span> Zurück zum Profil</a>
+	</div>
+	<%ORDERS%>
+</div>
+
+<%[ORDER]%>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4>Bestellung vom: <%ZEIT%></h4>
+	</div>
+	<div class="panel-body">
+		Lieferadresse: <%USER.STREET%> <%USER.STREETNUMBER%>, <%USER.ZIP%> <%USER.TOWN%><br />
+		<br />
+		<%PRODUCTS%>
+		<p>
+			<b>Gesamtsumme: <%PRICE%></b>
+		</p>
+	</div>
+</div>
+<%[/ORDER]%>
+
+<%[PRODUCT]%>
+<p>
+	<b><%NUM%>x <%NAME%></b> <span class="btn-group-xs <%HIDDEN%>"><a class="btn btn-default" title="in die Einkaufstüte" href="[[LinkTo:konto/orders/import/<%ORDER_ID%>/<%PRODUCT_ID%>]]"><span class="glyphicon glyphicon-shopping-cart"></span> 1x in die Einkaufstüte</a></span><br />
+	<%ADDONS%>
+	Preis: <%PRICE%>
+</p>
+<%[/PRODUCT]%>
+
+

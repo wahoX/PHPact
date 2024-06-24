@@ -1,0 +1,56 @@
+<%FORM%>
+
+<%[PERSOENLICH]%>
+<form method="post" action="[[LinkTo:konto/saveprofile]]/<%WHAT%>" id="<%WHAT%>_form" style="display:table;">
+	
+	<div class="col-xs-12 col-sm-4 lineedit label-konto linetwo"><strong>Anrede:</strong></div>
+	<!-- <div class="col-xs-12 col-sm-4 lineedit linetwo"><input name="vorname" value="<%ANREDE_SELECT_VALUE%>" class="form-control <%ANREDE_VALIDATE%>" /></div> -->
+	<div class="col-xs-12 col-sm-8 lineedit linetwo">
+		<select name="anrede" size="1" class="form-control selectpicker">
+			<option value="">-- Bitte wählen --</option>
+			<option value="1" <%ANREDE_Herr_SELECTED%>>Herr</option>
+			<option value="2" <%ANREDE_Frau_SELECTED%>>Frau</option>
+		</select>
+	</div>
+
+	<div class="col-xs-12 col-sm-4 lineedit label-konto"><strong>Vorname:</strong></div>
+	<div class="col-xs-12 col-sm-8 lineedit "><input name="vorname" value="<%VORNAME_VALUE%>" class="form-control <%VORNAME_VALIDATE%>" /></div>
+
+	<div class="col-xs-12 col-sm-4 lineedit label-konto linetwo"><strong>Nachname:</strong></div>
+	<div class="col-xs-12 col-sm-8 lineedit linetwo"><input name="name" value="<%NAME_VALUE%>" class="form-control <%NAME_VALIDATE%>" /></div>
+
+	<div class="col-xs-12 col-sm-4 lineedit label-konto"><strong>Geburtsdatum:</strong></div>
+	<div class="col-xs-12 col-sm-8 lineedit "><input name="geburtstag" value="<%GEBURTSTAG_VALUE%>" class="form-control <%GEBURTSTAG_VALIDATE%>" /></div>
+	<div class="clearfix"></div>
+	
+	<div style="padding:8px; margin-top:10px;">
+		<input type="submit" class="btn btn-success" value="Speichern" />
+		<input type="reset" class="btn btn-danger" id="<%WHAT%>_abort" value="Abbrechen" />
+	</div>
+</form>
+
+<script type="text/javascript">
+	$('#<%WHAT%>_form').ajaxForm({
+		success: function(data) {
+			$('#<%WHAT%>-content').html(data);
+		}
+	});
+	$('#<%WHAT%>_form').validationEngine('attach');
+
+</script>
+<%[/PERSOENLICH]%>
+
+
+<script type="javascript/text">
+	$('.selectpicker').selectpicker();
+</script>
+
+<%[SELECT]%>
+	<select name='<%NAME%>' class='selectpicker form-control' data-toggle="dropdown" size='1'>
+		<%OPTIONS%>
+	</select>
+<%[/SELECT]%>
+
+<%[OPTION]%>
+		<option value="<%NUM%>" <%SELECTED%>><%NAME%></option>
+<%[/OPTION]%>

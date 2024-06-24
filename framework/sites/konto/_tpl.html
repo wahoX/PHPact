@@ -1,0 +1,67 @@
+
+	<div class="col-md-12">
+
+            <div class="row">
+                <div class="col-md-5"> 
+                    <div class="panel panel-info" >
+                        <div class="panel-heading"><h4>Hallo <%ANREDE%> <%NACHNAME%></h4></div>
+                        <div class="panel-body">
+                            <div class="thumbnail float-left" style="width:60px; margin-right:10px;">
+                                <img style="width: 100%;" src="[[LinkTo:<%AVATAR%>]]" alt="Avatar" />
+                            </div>
+                            <p>Sie haben schon <a href="[[LinkTo:konto/cashback]]"><%CASHBACK%> Cashback</a> gesammelt.</p>
+                                                <div class="clearfix"></div>
+                                                        [[cms:say_hello]]
+                                                <p><b>http://nreins.de/i/<%USER_ID%></b><br /><br />
+                    Ihr persönlicher Registrierungscode zur Weitergabe an Ihre Freunde lautet:<br /><b><%USER_ID%></b></p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7">
+                    <div class="panel panel-info">
+                        <div class="panel-heading"><h4>Benutzer-Informationen: <a href="[[LinkTo:konto/profiledit]]" type="button" class="close glyphicon glyphicon-pencil" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true"></span></a></h4></div>
+                        <div class="panel-body">
+                            <table class="table table-striped" style="margin-bottom: 0;">
+                                <tbody>
+                                                                <tr>
+                                        <th>Vorname:</th>
+                                        <td><%VORNAME%></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Name:</th>
+                                        <td><%NACHNAME%></td>
+                                    </tr>
+                                                                <tr>
+                                        <th>Straße:</th>
+                                        <td><%ADDRESS.STREET%> <%ADDRESS.STREET_NUMBER%></td>
+                                    </tr>
+                                    <tr>
+                                        <th>PLZ:</th>
+                                        <td><%ADDRESS.ZIP%></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Ort:</th>
+                                        <td><%ADDRESS.CITY%></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Telefon:</th>
+                                        <td><%ADDRESS.PREPHONE%> <%ADDRESS.PHONE%></td>
+                                    </tr>
+                                    <tr>
+                                        <th>E-Mail:</th>
+                                        <td><%EMAIL%></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div id="timeline"></div>
+            <div class="clearfix"></div>            
+        </div>
+
+

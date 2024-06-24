@@ -1,0 +1,83 @@
+<h2>Kontaktieren Sie uns</h2>
+    	<form name="contact_form" id="contact_form" method="post" action="">
+			<input type="hidden" name="topic" value="<%TOPIC%>" />
+            
+            <div class="<%VORNAME_CLASS%> form-group row">        
+                <div class="formerror_message"><%VORNAME_MESSAGE%></div>
+                <label for="contact_vorname" class="label_input col-sm-3">[[:Vorname]]:<span class="asterisk">*</span></label>
+                <div class="col-sm-9">
+					<input type="text" value="<%VORNAME_VALUE%>" name="vorname" id="contact_vorname" placeholder="Vorname" class="<%VORNAME_VALIDATE%> form-control" />
+				</div>
+            </div>
+
+            <div class="<%NAME_CLASS%> form-group row">        
+                <div class="formerror_message"><%NAME_MESSAGE%></div>
+                <label for="contact_name" class="label_input col-sm-3">[[:Name]]:<span class="asterisk">*</span></label>
+                <div class="col-sm-9">
+					<input type="text" value="<%NAME_VALUE%>" name="name" id="contact_name" placeholder="Nachname" class="<%NAME_VALIDATE%> form-control" />
+				</div>
+            </div>
+            
+            <div class="<%CITY_CLASS%> form-group row">         
+                <div class="formerror_message"><%CITY_MESSAGE%></div>
+                <label for="contact_city" class="label_input col-sm-3">[[:Ort]]:</label>
+                <div class="col-sm-9">
+					<input type="text" value="<%CITY_VALUE%>" name="city" id="contact_city" placeholder="Ort" class="<%CITY_VALIDATE%> form-control" />
+				</div>
+            </div> 
+
+            <div class="<%EMAIL_CLASS%> form-group row">         
+                <div class="formerror_message"><%EMAIL_MESSAGE%></div>
+                <label for="contact_email" class="label_input col-sm-3">[[:E-Mail]]:<span class="asterisk">*</span></label>
+                <div class="col-sm-9">
+					<input type="text" value="<%EMAIL_VALUE%>" name="email" id="contact_email" placeholder="E-Mail Adresse" class="<%EMAIL_VALIDATE%> form-control" />
+				</div>
+            </div> 
+
+            <div class="<%PHONE_CLASS%> form-group row">         
+                <div class="formerror_message"><%PHONE_MESSAGE%></div>
+                <label for="contact_phone" class="label_input col-sm-3">[[:Telefon]]:</label>
+                <div class="col-sm-9">
+					<input type="text" value="<%PHONE_VALUE%>" name="phone" id="contact_phone" placeholder="Telefonnummer" class="<%PHONE_VALIDATE%> form-control" tabindex="" />
+				</div>
+            </div> 
+
+			<div class="bs">
+				<div class="<%SUBJECT_CLASS%> form-group row">         
+					<div class="formerror_message"><%SUBJECT_MESSAGE%></div>
+					<label for="contact_subject" class="label_input col-sm-3">[[:Subject]] (hier sollte nichts stehen!):</label>
+					<input type="text" value="<%SUBJECT_VALUE%>" name="subject" id="contact_subject" placeholder="Betreff" class="<%SUBJECT_VALIDATE%> form-control" />
+				</div> 
+
+				<div class="<%MESSAGE_CLASS%> form-group row">         
+					<div class="formerror_message"><%MESSAGE_MESSAGE%></div>
+					<label for="contact_message" class="label_input label_textarea col-sm-3">[[:Message]] (hier sollte nichts stehen!):</label>
+					<textarea id="contact_message" name="message" class="<%MESSAGE_VALIDATE%> form-control" placeholder="Nachricht" style="height:100px;"><%MESSAGE_VALUE%></textarea>
+				</div> 
+			</div>
+
+            <div class="<%XHISVG_CLASS%> form-group row">         
+                <div class="formerror_message"><%XHISVG_MESSAGE%></div>
+                <label for="contact_xhisvg" class="label_input label_textarea col-sm-3">[[:Anliegen]]:</label>
+                <div class="col-sm-9">
+					<textarea id="contact_xhisvg" name="xhisvg" class="<%XHISVG_VALIDATE%> form-control" placeholder="Bitte schildern Sie Ihr Anliegen" style="height:100px;"><%XHISVG_VALUE%></textarea>
+				</div>
+            </div>
+            
+            <div class="row">         
+                <div class="col-sm-3 hidden-xs"></div>
+				<div class="col-sm-9">
+					<label><input type="checkbox" name="ds" id="ds" value="1" class="validate[required]" /> Ja, ich habe die <a href="/datenschutz" target="_blank">Datenschutzerklärung</a> zur Kenntnis genommen. Ich bestätige, dass meine Daten zum Zweck der Kontaktafnahme gespeichert werden dürfen.</label>
+					<br />&nbsp;
+				</div>
+			</div>
+			
+            <input type="hidden" value="1" name="topic_id" />
+            <div class="row">
+                <div class="col-sm-3 hidden-xs">&nbsp;</div>
+				<div class="col-sm-9">
+					<input type="submit" name="contact_submit" class="btn btn-success raised" value="[[:Anfrage absenden]]" />
+				</div>
+       		</div>
+        </form>                  
+        <div class="clearfix"></div>

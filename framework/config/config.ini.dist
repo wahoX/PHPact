@@ -1,0 +1,23 @@
+Constants:
+  ENV: PRODUCTIVE
+  DB_Host: localhost
+  DB_User: dbname
+  DB_Pass: dbpasswort
+  DB: smartmvc
+  DB_SUFFIX: portal_
+  DB_PREFIX: portal_
+  GUEST: 1
+  USER: 2
+  MODERATOR: 3
+  S_ADMIN: 4
+  I_ADMIN: 5
+  PROVISION: 8
+  MAIL_Address: noreply@domain.tld
+  MAIL_Host: mail.domain.tld
+  MAIL_User: noreply@domain.tld
+  MAIL_Pass: SecretMailPassword 
+
+Aliases:
+  login: user/login
+  logout: user/logout
+  404: oops

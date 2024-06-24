@@ -1,0 +1,20 @@
+<%OUTPUT%>
+
+
+<%[TEXT]%>
+    <div class="<%CLASS%>">
+        <div class="input-group input-group-sm">
+            <span class="input-group-addon "><label for="<%ID%>"><%TITLE%>:<%PFLICHT%></label></span>
+            <input type="text" placeholder="<%PLACEHOLDER%>" title="<%PLACEHOLDER%>" class="<%VALIDATE%> form-control" name="<%NAME%>" id="<%ID%>" value="<%VALUE%>" data-container="body" data-toggle="popover" data-content="<%MESSAGE%>" />
+        </div>
+    </div>
+<%[/TEXT]%>
+
+<%[TEXTAREA]%>
+    <div class="<%CLASS%>">
+        <div class="input-group input-group-sm">
+            <span class="input-group-addon"><label for="<%ID%>"><%TITLE%>:<%PFLICHT%></label></span>
+            <textarea style="height:100px;" placeholder="<%PLACEHOLDER%>" title="<%PLACEHOLDER%>" class="<%VALIDATE%> form-control" name="<%NAME%>" id="<%ID%>"><%VALUE%></textarea>
+        </div>
+    </div>
+<%[/TEXTAREA]%>

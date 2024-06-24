@@ -1,0 +1,26 @@
+<div class="col-xs-12">
+	<h3 style="padding-left: 0; margin-bottom:15px;">Ihre Bonuspunkte</h3>
+    <div class="panel panel-default">
+		<div class="panel-heading">
+			<h4>Hallo <%VORNAME%> <%NACHNAME%>,</h4>
+		</div>
+		<div class="panel-body">
+			Sie haben aktuell <b><%POINTS%> Bonuspunkte</b>.<br />
+			<br />
+			<%ACTION%>
+			<br />
+			<br />
+			<a class="btn btn-default" href="[[LinkTo:konto/profiledit]]" title="Zurück zum Profil"><span class="glyphicon glyphicon-arrow-left"></span> Zurück zum Profil</a>
+		</div>
+	</div>
+</div>
+
+<%[NOT_ENOUGH]%>
+	Sie benötigen mindestens 20 Bonuspunkte, um einen Gutschein anzufordern.
+<%[/NOT_ENOUGH]%>
+
+<%[GET_COUPON]%>
+	Für 20 Bonuspunkte können Sie einen 5,- &euro; Gutschein anfordern.<br /><br />
+	<a class="btn btn-success" href="[[LinkTo:konto/points/getcoupon]]">5,- &euro; Gutschein anfordern</a>
+<%[/GET_COUPON]%>
+
