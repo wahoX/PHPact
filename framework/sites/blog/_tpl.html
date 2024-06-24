@@ -1,0 +1,43 @@
+<div id="header-image">
+    <div class="teaser">
+        <div class="container">
+            Unsere schöne Stadt verdient Erfolge
+        </div>
+    </div>
+</div>
+
+<%NAVIMIDDLE%>
+<div class="maincontent">
+    
+    <div  class="container pt-1">
+
+        <%SUCCESS%><%HINT%><%ERROR%>
+
+        <%BLOG_NEW%>
+        <%BLOG%>
+        <%PAGINATION_BOTTOM%>        
+    </div>
+</div>
+
+
+<%[BLOG_NEW]%>
+<div style="padding:8px 0; border-bottom:1px solid #ddd">
+	<div class="btn-group-sm">
+		<a href="[[LinkTo:blog/edit/new]]" <%JS%> class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> Neuer Blog-Beitrag<span></a>
+	</div>
+    <div class="clearfix"></div>
+</div>
+<%[/BLOG_NEW]%>
+
+
+<%[PAGINATION]%>
+<nav class="text-center">
+    <ul class="pagination">
+        <%BACK%>
+        <%PAGES%>
+        <%FORWARD%>
+    </ul>
+</nav>
+<%[/PAGINATION]%>
+
+<%[PAGE]%><li <%ACTIVE%>><a href="[[LinkTo:blog<%URL%>]]"><%PAGE%></a></li><%[/PAGE]%>

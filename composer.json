@@ -1,0 +1,8 @@
+{
+    "require": {
+        "pear/mail_mime": "^1.10",
+        "pear/net_smtp": "^1.10",
+        "pear/mail": "^1.4",
+        "mustangostang/spyc": "^0.6.3"
+    }
+}

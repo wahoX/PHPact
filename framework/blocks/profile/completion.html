@@ -1,0 +1,32 @@
+<div class="panel-group" class="accordion">
+	<div class="panel panel-info" id="panel1">
+		<div class="panel-heading panel-collapsable">
+			<h4>
+				<a data-toggle="collapse" data-target="#completion-body" href="#completion-body">
+					Vollständigkeit Ihres NrEins.de Profils:
+				</a>
+			</h4>
+		</div>
+		<div class="panel-collapse collapse in" id="completion-body">
+			<div class="panel-body">
+				<div class="progress">
+					<div class="progress-bar" style="width: <%PERCENT%>%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="<%PERCENT%>" role="progressbar"> <%PERCENT%>% </div>
+				</div>
+
+				<div class="alert alert-warning">
+					Sie können die Vollsändigkeit Ihres Profils durch weitere Angaben erhöhen:
+					<ul>
+						<%MISSING%>
+					</ul>
+				</div>
+                                <a href="[[LinkTo:konto/profiledit]]" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Profil vervollständigen</a>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+<%[MISSING]%>
+<li style="list-style-type:disc"><%TEXT%></li>
+<%[/MISSING]%>

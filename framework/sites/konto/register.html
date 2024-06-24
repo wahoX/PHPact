@@ -1,0 +1,73 @@
+<div class="row">
+	<div class="col-sm">&nbsp;</div>
+	<div class="col-sm-8 col-md-6">
+		<div class="card">
+			<div class="card-header">
+				<h4>Registrieren Sie sich kostenlos</h4>
+			</div>
+			<div class="card-body">
+
+				<form action="" method="post" id="register_form">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+						</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<label class="control-label">Anrede</label>
+									<select name="gender" class="<%GENDER_VALIDATE%> form-control">
+										<option>-- Bitte wählen --</option>
+										<option value="1" name="gender" <%GENDER_1_SELECTED%> id="register_gender_male">Herr</option>
+										<option value="2" name="gender" <%GENDER_2_SELECTED%> id="register_gender_female">Frau</option>
+									</select>
+							</div>
+
+							<div class="form-group <%VORNAME_CLASS%>">
+								<label class="control-label" for="register_vorname">Vorname:</label>
+									<input type="text" name="vorname" id="register_vorname" class="form-control <%VORNAME_VALIDATE%>" value="<%VORNAME_VALUE%>" placeholder="Vorname" />
+								<%VORNAME_MESSAGE%>
+							</div>
+
+							<div class="form-group <%NACHNAME_CLASS%>">
+								<label class="control-label" for="register_nachname">Nachname:</label>
+									<input type="text" name="nachname" id="register_nachname" class="<%NACHNAME_VALIDATE%> form-control" placeholder="Nachname" value="<%NACHNAME_VALUE%>" />
+								<%NACHNAME_MESSAGE%>
+							</div>
+
+							<div class="form-group <%EMAIL_CLASS%>">
+								<label class="control-label" for="register_email">E-Mail Adresse:</label>
+									<input type="text" class="<%EMAIL_VALIDATE%> form-control" name="email" placeholder="E-Mail Adresse" id="register_email" value="<%EMAIL_VALUE%>"/>
+								<%EMAIL_MESSAGE%>
+							</div>
+
+							<div class="form-group <%PASSWORD_CLASS%>">
+								<label class="control-label" for="register_password" >Passwort:</label>
+									<input value="<%PASSWORD_VALUE%>" type="password" name="password" class="form-control" id="register_password" placeholder="Passwort" />
+								<%PASSWORD_MESSAGE%>
+									<div class="validation_hint">Bitte wiederholen Sie das Passwort zur Sicherheit.</div>
+							</div>
+							<div class="form-group <%PASSWORD2_CLASS%>">
+									<input type="password" class="form-control <%PASSWORD2_VALIDATE%>" name="password2" id="register_password2" value="<%PASSWORD2_VALUE%>" placeholder="Passwort wiederholen">
+								<%PASSWORD2_MESSAGE%>
+									<div class="validation_hint">Bitte wiederholen Sie das Passwort zur Sicherheit.</div>
+							</div>
+
+							<div class="checkbox">
+								<input type="checkbox" class="<%AGB_VALIDATE%>" <%AGB_1_CHECKED%> name="agb" value="1" />
+								<label>Ja, ich stimme den <a href="[[LinkTo:datenschutz]]" onclick="return openAjaxPopup('ajax/datenschutz', 'Datenschutzbestimmungen', true, true, 'bg-primary');">Datenschutzbestimmungen</a> zu.*
+								</label>
+							</div>
+
+							<div class="form-group">
+								<br />
+								<input type="submit" class="btn btn-success btn-raised" value="jetzt anmelden" />
+								<a href="[[LinkTo:userlogin]]" class="btn btn-danger">Abbrechen</a>
+							</div>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+	<div class="col-sm">&nbsp;</div>
+</div>

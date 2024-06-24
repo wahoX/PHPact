@@ -1,0 +1,125 @@
+<!-- Dynamische Inhalte für META-Daten -->
+<%[YAML]%>
+Title: <%TITLE%>
+Description: <%DESCRIPTION%>
+Keywords: [<%KEYWORDS%>]
+<%[/YAML]%>
+
+	<%GALLERYCONTROL%>
+
+	<ul id="content_sortable">
+		<%CONTENT%>
+	</ul>
+<div class="clearfix"></div>
+<%TOOLBOX%>
+<%FORM%>
+
+
+<%[GALLERYCONTROL]%>
+            <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" >
+                <!-- The container for the modal slides -->
+                <div class="slides"></div>
+                <!-- Controls for the borderless lightbox -->
+                <h3 class="title"></h3>
+                <a class="prev">‹</a>
+                <a class="next">›</a>
+                <a class="close">×</a>
+                <a class="play-pause"></a>
+                <ol class="indicator"></ol>
+                <!-- The modal dialog, which will be used to wrap the lightbox content -->
+                <div class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title"></h4>
+                            </div>
+                            <div class="modal-body next"></div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success pull-left prev">
+                                    <i class="glyphicon glyphicon-chevron-left"></i>
+                                    Zurück
+                                </button>
+                                <button type="button" class="btn btn-success next">
+                                    Vor
+                                    <i class="glyphicon glyphicon-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<%[/GALLERYCONTROL]%>
+
+<%[TOOLBOX]%>
+<div id="toolbox" class="content_box" style="position:relative; margin-right:9px;">
+
+	<a href="#" onclick="$('#content_new_type').slideToggle(); return false;">Inhalt hinzufügen</a>
+	<div id="content_new_type">
+		<a href="#" onclick="return content_new('text');">Text</a>
+		<a href="#" onclick="return content_new('preview');">Vorschau</a>
+		<a href="#" onclick="return content_new('download');">Dokument</a>
+		<a href="#" onclick="return content_new('picture');">Galeriebild</a>
+	</div>
+	<div id="content_new_text" style="display:none;">
+		<%FORM_NEW_TEXT%>
+	</div> <!-- END TEXT -->
+	<div id="content_new_preview" style="display:none;">
+		<%FORM_NEW_PREVIEW%>
+	</div> <!-- END PREVIEW -->
+	<div id="content_new_download" style="display:none;">
+		<%FORM_NEW_DOWNLOAD%>
+	</div> <!-- END DOWNLOAD -->
+	<div id="content_new_picture" style="display:none;">
+		<%FORM_NEW_PICTURE%>
+	</div> <!-- END DOWNLOAD -->
+	<div id="content_new_product" style="display:none;">
+		<%FORM_NEW_PRODUCT%>
+	</div>
+</div>			
+<%[/TOOLBOX]%>
+
+<%[TOOLBOX_NEWS]%>
+<div id="toolbox" class="content_box" style="position:relative; margin-right:9px;">
+
+	<a href="#" onclick="return content_new('text'); return false;">Inhalt hinzufügen</a>
+	<div id="content_new_text" style="display:none;">
+		<%FORM_NEW_TEXT%>
+	</div> <!-- END TEXT -->
+</div>			
+<%[/TOOLBOX_NEWS]%>
+
+<%[CONTENT_ITEM]%>
+	<li id="content_<%ID%>" class="sortable">
+		<% <!-- Clear wird hier benötigt, sonst wird das Layout zerstört, wenn eine Vorschaubox davor kommt (diese haben float:left) --> %>
+		<div class="clearfix"></div>
+		<%TEXT%>
+	</li>
+<%[/CONTENT_ITEM]%>
+
+<%[PREVIEW_ITEM]%>
+	<li id="content_<%ID%>" class="sortable content_vorschaubox">
+		<%TEXT%>
+	</li>
+<%[/PREVIEW_ITEM]%>
+
+<%[PICTURE_ITEM]%>
+	<li id="content_<%ID%>" class="sortable" style="float:left; width:122px; margin-right:9px;">
+		<%TEXT%>
+	</li>
+<%[/PICTURE_ITEM]%>
+
+<%[PICTURES_WRAPPER]%>
+<div class="clear"></div>
+<div class="content_box images">
+	<%PICTURES%>
+	<div class="clearfix"></div>
+</div>
+<%[/PICTURES_WRAPPER]%>
+
+<%[PICTURES_WRAPPER_ADMIN]%>
+<div class="clearfix"></div>
+<%PICTURES%>
+<div class="clearfix"></div>
+<%[/PICTURES_WRAPPER_ADMIN]%>
+

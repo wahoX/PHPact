@@ -1,0 +1,163 @@
+<%[FORM_TEXT]%>
+	<script src='[[LinkTo:res/js/wz_tooltip.js]]' type='text/javascript'></script>
+	<form action="[[LinkTo:cms/save]]" method="post" class="formbb" id="form_content_<%ID%>">
+		<input type="hidden" value="<%ID%>" name="id" />
+		<input type="hidden" value="<%MID%>" name="menu_id" />
+		<input type="hidden" value="<%FORWARD_VALUE%>" name="forward" />
+		<p>
+			<h2>Textinhalt <%ACTION%></h2>
+		</p>
+		<p>
+			<label for="beginn" class="label_input">[[:Gültig ab:]] <a href="#" onmouseover="Tip('Ab diesem Tag wird der Inhalt angezeigt<br />Leer lassen für sofortige Gültigkeit', ABOVE, true, FONTSIZE, '1em', WIDTH, '200px', FOLLOWMOUSE, false);" onmouseout="UnTip();" onclick="return false;">[?]</a></label><br />
+			<input type="text" maxlength="" value="<%BEGINN_VALUE%>" name="beginn" id="beginn" class="<%BEGINN_VALIDATE%> input datepicker" />
+		</p>
+		<p>
+			<label for="ende" class="label_input">[[:Gültig bis (ausschließlich):]] <a href="#" onmouseover="Tip('Ab diesem Tag wird der Inhalt nicht mehr angezeigt<br />Leer lassen für unbegrenzte Gültigkeit', ABOVE, true, FONTSIZE, '1em', WIDTH, '200px', FOLLOWMOUSE, false);" onmouseout="UnTip();" onclick="return false;">[?]</a></label><br />
+			<input type="text" maxlength="" value="<%ENDE_VALUE%>" name="ende" id="ende" class="<%ENDE_VALIDATE%> input datepicker" />
+		</p>
+		<p>
+			Überschrift:<br />
+			<input type="text" style="width:450px; font-size:1.1em;" value="<%TITLE%>" name="title" />
+		</p>
+		<p>
+			<textarea style="width:500px; height:500px;" id="editor_<%ID%>" name="content" cols="10"><%TEXT%></textarea>
+		</p>
+		<p>
+			<input type="submit" name="send" value="Speichern" />
+		</p>
+		&nbsp;<br />&nbsp;<br />
+	</form>
+<%[/FORM_TEXT]%>
+
+<%[FORM_DOWNLOAD]%>
+	<form action="[[LinkTo:cms/save]]" enctype="multipart/form-data" method="post" class="formbb" id="form_download_<%ID%>">
+		<input type="hidden" value="<%ID%>" name="id" />
+		<input type="hidden" value="<%MID%>" name="menu_id" />
+		<input type="hidden" value="download" name="type" />
+		<input type="hidden" value="<%FORWARD_VALUE%>" name="forward" />
+		<p>
+			<h2>Dokument <%ACTION%></h2>
+		</p>
+		<p>
+			<label for="beginn" class="label_input">[[:Gültig ab:]] <a href="#" onmouseover="Tip('Ab diesem Tag wird der Inhalt angezeigt<br />Leer lassen für sofortige Gültigkeit', ABOVE, true, FONTSIZE, '1em', WIDTH, '200px', FOLLOWMOUSE, false);" onmouseout="UnTip();" onclick="return false;">[?]</a></label><br />
+			<input type="text" maxlength="" value="<%BEGINN_VALUE%>" name="beginn" id="beginn" class="<%BEGINN_VALIDATE%> input datepicker" />
+		</p>
+		<p>
+			<label for="ende" class="label_input">[[:Gültig bis (ausschließlich):]] <a href="#" onmouseover="Tip('Ab diesem Tag wird der Inhalt nicht mehr angezeigt<br />Leer lassen für unbegrenzte Gültigkeit', ABOVE, true, FONTSIZE, '1em', WIDTH, '200px', FOLLOWMOUSE, false);" onmouseout="UnTip();" onclick="return false;">[?]</a></label><br />
+			<input type="text" maxlength="" value="<%ENDE_VALUE%>" name="ende" id="ende" class="<%ENDE_VALIDATE%> input datepicker" />
+		</p>
+		<p>
+			Linktext:<br />
+			<input type="text" style="width:450px; font-size:1.1em;" value="<%TITLE%>" name="title" />
+		</p>
+		<p>
+			Beschreibung:<br />
+			<textarea style="width:450px; height:150px;" name="content" cols="10"><%TEXT%></textarea>
+		</p>
+		<p>
+			Datei auswählen:<br />
+			<input type="file" name="upload" />
+		</p>
+		<p>
+			<input type="submit" name="send" value="Speichern" />
+		</p>
+		&nbsp;<br />&nbsp;<br />
+	</form>
+<%[/FORM_DOWNLOAD]%>
+
+
+
+<%[FORM_PICTURE]%>
+	<form action="[[LinkTo:cms/save]]" enctype="multipart/form-data" method="post" class="formbb" id="form_download_<%ID%>">
+		<input type="hidden" value="<%ID%>" name="id" />
+		<input type="hidden" value="<%MID%>" name="menu_id" />
+		<input type="hidden" value="picture" name="type" />
+		<input type="hidden" value="<%FORWARD_VALUE%>" name="forward" />
+		<p>
+			<h2>Galeriebild <%ACTION%></h2>
+		</p>
+		<p>
+			<label for="beginn" class="label_input">[[:Gültig ab:]] <a href="#" onmouseover="Tip('Ab diesem Tag wird der Inhalt angezeigt<br />Leer lassen für sofortige Gültigkeit', ABOVE, true, FONTSIZE, '1em', WIDTH, '200px', FOLLOWMOUSE, false);" onmouseout="UnTip();" onclick="return false;">[?]</a></label><br />
+			<input type="text" maxlength="" value="<%BEGINN_VALUE%>" name="beginn" id="beginn" class="<%BEGINN_VALIDATE%> input datepicker" />
+		</p>
+		<p>
+			<label for="ende" class="label_input">[[:Gültig bis (ausschließlich):]] <a href="#" onmouseover="Tip('Ab diesem Tag wird der Inhalt nicht mehr angezeigt<br />Leer lassen für unbegrenzte Gültigkeit', ABOVE, true, FONTSIZE, '1em', WIDTH, '200px', FOLLOWMOUSE, false);" onmouseout="UnTip();" onclick="return false;">[?]</a></label><br />
+			<input type="text" maxlength="" value="<%ENDE_VALUE%>" name="ende" id="ende" class="<%ENDE_VALIDATE%> input datepicker" />
+		</p>
+		<p>
+			Titel:<br />
+			<input type="text" style="width:450px; font-size:1.1em;" value="<%TITLE%>" name="title" />
+		</p>
+		<p>
+			Datei auswählen:<br />
+			<input type="file" name="upload" />
+		</p>
+		<p>
+			<input type="submit" name="send" value="Speichern" />
+		</p>
+		&nbsp;<br />&nbsp;<br />
+	</form>
+<%[/FORM_PICTURE]%>
+
+
+
+<%[FORM_PREVIEW]%>
+
+	<%[PREVIEW_MENU_OPTION]%>
+		<option value="<%MENU_ID%>"<%SELECTED%>><%NAME%></option>
+	<%[/PREVIEW_MENU_OPTION]%>
+
+	<form action="[[LinkTo:cms/save]]" enctype="multipart/form-data" method="post" class="formbb" id="form_preview_<%ID%>">
+		<input type="hidden" value="<%ID%>" name="id" />
+		<input type="hidden" value="<%MID%>" name="menu_id" />
+		<input type="hidden" value="preview" name="type" />
+		<input type="hidden" value="<%FORWARD_VALUE%>" name="forward" />
+		<p>
+			<h2>Vorschaubox <%ACTION%></h2>
+		</p>
+		<p>
+			<label for="beginn" class="label_input">[[:Gültig ab:]] <a href="#" onmouseover="Tip('Ab diesem Tag wird der Inhalt angezeigt<br />Leer lassen für sofortige Gültigkeit', ABOVE, true, FONTSIZE, '1em', WIDTH, '200px', FOLLOWMOUSE, false);" onmouseout="UnTip();" onclick="return false;">[?]</a></label><br />
+			<input type="text" maxlength="" value="<%BEGINN_VALUE%>" name="beginn" id="beginn" class="<%BEGINN_VALIDATE%> input datepicker" />
+		</p>
+		<p>
+			<label for="ende" class="label_input">[[:Gültig bis (ausschließlich):]] <a href="#" onmouseover="Tip('Ab diesem Tag wird der Inhalt nicht mehr angezeigt<br />Leer lassen für unbegrenzte Gültigkeit', ABOVE, true, FONTSIZE, '1em', WIDTH, '200px', FOLLOWMOUSE, false);" onmouseout="UnTip();" onclick="return false;">[?]</a></label><br />
+			<input type="text" maxlength="" value="<%ENDE_VALUE%>" name="ende" id="ende" class="<%ENDE_VALIDATE%> input datepicker" />
+		</p>
+		<p>
+			Überschrift:<br />
+			<input type="text" style="width:450px; font-size:1.1em;" value="<%TITLE%>" name="title" />
+		</p>
+		<p>
+			Beschreibung:<br />
+			<textarea style="width:450px; height:150px;" name="content" cols="10"><%TEXT%></textarea>
+		</p>
+		<p>
+			Link auswählen (dorthin verlinkt die Vorschaubox):<br />
+			<select name="preview_link" size="1">
+				<%OPTIONS%>
+			</select>
+		</p>
+
+                <p>
+			ID des Inhaltes, zu dem gesprungen werden soll (optional): <br />
+                        <input type="text" name="anker" id="anker" value="<%ANKER_VALUE%>" /><br />
+                        Die ID sehen Sie, wenn Sie mit dem Mauszeiger im Bearbeiten-Modus über den Inhaltspunkt gehen. Die ID steht dann oben in der dunkelroten Leiste.
+		</p>
+
+		Bild auswählen:<br />
+		<div id="preview_image_<%ID%>" style="display:none;"></div>
+	</form>
+
+	<form action="[[LinkTo:ajax/imageupload/image/90/150/inline]]" enctype="multipart/form-data" method="post" class="formbb" id="form_image_<%ID%>">
+		<p>
+			<input type="file" name="userimg" onchange="$('#form_image_<%ID%>').submit();" />
+		</p>
+	</form>
+	
+	<div id="uploadworking_<%ID%>"></div>
+	
+	<p>
+		<input type="submit" name="send" onclick="$('#form_preview_<%ID%>').submit();" value="Speichern" />
+	</p>
+	&nbsp;<br />&nbsp;<br />
+<%[/FORM_PREVIEW]%>

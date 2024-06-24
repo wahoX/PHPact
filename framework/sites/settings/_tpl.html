@@ -1,0 +1,359 @@
+<ul class="nav nav-tabs" role="tablist" id="meinTab">
+  <li role="presentation" class="active"><a href="#logo" aria-controls="logo" data-toggle="tab">Logo / Favicon</a></li>
+  <li role="presentation"><a href="#layout" aria-controls="layout" role="tab" data-toggle="tab">Layout</a></li>
+  <li role="presentation"><a href="#einstellungen" aria-controls="einstellungen" role="tab" data-toggle="tab">Einstellungen</a></li>
+  <li role="presentation"><a href="#impressum" aria-controls="impressum" role="tab" data-toggle="tab">Impressum</a></li>
+  <li role="presentation"><a href="#agb" aria-controls="agb" role="tab" data-toggle="tab">AGB's</a></li>
+</ul>
+
+<div class="col-xs-12">
+	<div id="colorpicker_wrapper" style="display:none; background: #fff; border: 1px solid #888; position: absolute; right: 15px; top: 90px; padding: 5px; box-shadow: 3px 3px 6px 2px #999; border-radius: 5px; z-index:99999;"><a href="#" onclick="$('#colorpicker_wrapper').slideUp(); return false;" style="float:right;">[x]</a>
+		<b>Farbauswahl</b>
+		<div id="colorpicker" style="margin-top:5px; padding-top:5px; border-top:1px solid #888;"></div>
+		<input type="hidden" name="toggleId" value="#colorpicker_wrapper" />
+		<input type="hidden" name="form" value="color" />
+	</div>
+
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane in fade active" id="logo">
+			<br />
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h2 class="panel-title">Favicon</h2>
+				</div>
+				<div class="panel-body">
+					<p>Hier haben Sie die Möglichkeit, das Favicon Ihrer Seite zu ersetzen. Das Favicon ist eine kleine Grafik, die in modernen Browsern in der Adresszeile und im Tab abgezeigt wird. Wählen Sie dafür eine Grafik aus, das Favicon wird daraus automatisch erzeugt. Sie sollten ein quadratisches Bild wählen, ansonsten wird das Ergebnis verzerrt sein.</p>
+			
+					<div id="favicon_upload">
+						<form method="post" id="form_favicon" enctype="multipart/form-data" action="[[LinkTo:ajax/imageupload/favicon]]" class="" style="position: relative; display:block;">
+							<label for="pagetitle"><b>Bild auswählen:</b></label><br />
+							<input type="file" class="input" name="userimg_favicon" id="userimg_favicon" value="" style="width:300px;" onchange="$('#form_favicon').submit();" /><br />
+							<div class="alert alert-success success" style="display:none; color:#587f18;">Die Daten wurden gespeichert.</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h2 class="panel-title">Logo</h2>
+				</div>
+				<div class="panel-body">
+					<p>Hier haben Sie die Möglichkeit, Ihr Logo zu ersetzen. Wählen Sie eine Bilddatei aus. Die Bildgröße wird automatisch angepasst. Maximale Dateigröße: 2MB.</p>
+					
+					<div id="logo_upload">
+						<form method="post" id="form_logo" enctype="multipart/form-data" action="[[LinkTo:ajax/imageupload/logo]]" class="" style="position: relative; display:block;">
+							<label for="pagetitle"><b>Bild auswählen:</b></label><br />
+							<input type="file" class="input" name="userimg_logo" id="userimg_logo" value="" style="width:300px;" onchange="$('#form_logo').submit();" /><br />
+							<div id="uploadworking_logo"></div>
+							<div class="alert alert-success success" style="display:none; color:#587f18;">Die Daten wurden gespeichert.</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div role="tabpanel" class="tab-pane fade" id="layout">
+			<br />
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+				<div class="panel panel-info">
+					<div class="panel-heading" id="titlegrundeinstellungen">
+						<h4 class="panel-title">
+							<a style="text-decoration: none;" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#grundeinstellungen" aria-expanded="false" aria-controls="grundeinstellungen">
+								Grundeinstellungen
+							</a>
+						</h4>
+					</div>
+					<div id="grundeinstellungen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="titlegrundeinstellungen">
+						<div class="panel-body">
+							<form method="post" action="[[LinkTo:ajax/settings/save]]" class="adminform setting_form" style="position: relative;">
+							
+								<div class="form-group">
+									<label for="schriftart"><b>Schriftart:</b></label><br />
+									<select class="form-control" name="font_family" id="font_family">
+										<%FONT_OPTIONS%>
+									</select>
+								</div>
+								
+								<div class="form-group">
+									<label for="font_size"><b>Schriftgröße:</b></label><br />
+									<input class="form-control" type="text" name="font_size" id="font_size" value="<%FONT_SIZE_VALUE%>" />
+								</div>
+
+								<div class="form-group">
+									<label for="color"><b>Haupt-Farbe:</b></label><br />
+									<input class="form-control" type="text" id="color" class="input" name="maincolor" value="<%MAINCOLOR%>" />
+								</div>
+							
+								<input type="submit" value="Speichern" class="btn btn-success" />
+								<div class="alert alert-success success" style="display:none; color:#587f18;">Die Daten wurden gespeichert.</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				</br />
+				<div class="panel panel-info">
+					<div class="panel-heading" role="tab" id="titlekopfbreich">
+						<h4 class="panel-title">
+							<a style="text-decoration: none;" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#kopfbreich" aria-expanded="false" aria-controls"kopfbreich">
+								Kopfbereich
+							</a>
+						</h4>
+					</div>
+					<div id="kopfbreich" class="panel-collapse collapse" role="tabpanel" aria-labelledby="titlekopfbreich">
+						<div class="panel-body">
+							<form method="post" action="[[LinkTo:ajax/settings/save]]" class="adminform setting_form" style="position: relative;">
+					
+								<div class="form-group">
+									<label for="pagetitle"><b>Seitentitel:</b></label>
+									<input type="text" class="form-control" name="pagetitle" id="pagetitle" value="<%PAGETITLE%>"/>
+								</div>
+								
+								<div class="form-group">
+									<label for="pagetitle_size"><b>Größe des Titels:</b></label>
+									<input type="text" class="form-control" name="pagetitle_size" id="pagetitle_size" value="<%PAGETITLE_SIZE_VALUE%>" />
+								</div>
+								
+								<div class="form-group">
+									<label for="slogan"><b>Slogan:</b></label>
+									<input type="text" class="form-control" name="slogan" id="slogan" value="<%SLOGAN%>" />
+								</div>
+								
+								<div class="form-group">
+									<label for="slogan_size"><b>Größe des Slogans:</b></label>
+									<input class="form-control" type="text" name="slogan_size" id="slogan_size" value="<%SLOGAN_SIZE_VALUE%>" />
+								</div>
+
+								<input type="submit" value="Speichern" class="btn btn-success" />
+								<div class="alert alert-success success" style="display:none; color:#587f18;">Die Daten wurden gespeichert.</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<br />
+				<div class="panel panel-info">
+					<div class="panel-heading" role="tab" id="titleseo">
+						<h4 class="panel-title">
+							<a style="text-decoration: none;" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#seo" aria-expanded="false" aria-controls"seo">
+								Suchmaschinenoptimierung
+							</a>
+						</h4>
+					</div>
+					<div id="seo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="titleseo">
+						<div class="panel-body">
+							<form method="post" action="[[LinkTo:ajax/settings/save]]" class="adminform setting_form" style="position: relative;">
+								<p>Die Texte für die Suchmaschinenoptimierung können (und sollten) für jeden menüpunkt individuell angegeben werden. Die folgenden Daten werden als Standardwerte verwendet, wenn für einen Menüpunkt keine Daten angegeben sind.</p>
+														
+								<div class="form-group">
+									<label for="seo_title"><b>Seitentitel:</b></label><br />
+									<input type="text" id="seo_title" class="form-control" name="seo_title" value="<%SEO_TITLE_VALUE%>" />
+								</div>
+							
+								<div class="form-group">
+									<label for="seo_description"><b>Seitenbeschreibung:</b></label><br />
+									<input type="text" id="seo_description" class="form-control" name="seo_description" value="<%SEO_DESCRIPTION_VALUE%>" />
+								</div>
+							
+								<div class="form-group">
+									<label for="seo_keywords"><b>Keywords:</b></label><br />
+									<input type="text" id="seo_keywords" class="form-control" name="seo_keywords" value="<%SEO_KEYWORDS_VALUE%>" />
+								</div>
+									
+								<input type="submit" value="Speichern" class="btn btn-success" />
+								<div class="alert alert-success success" style="display:none; color:#587f18;">Die Daten wurden gespeichert.</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<br />
+				<div class="panel panel-info">
+					<div class="panel-heading" role="tab" id="titlecss">
+						<h4 class="panel-title">
+							<a style="text-decoration: none;" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#css" aria-expanded="false" aria-controls"css">
+								Styling
+							</a>
+						</h4>
+					</div>
+					<div id="css" class="panel-collapse collapse" role="tabpanel" aria-labelledby="titlecss">
+						<div class="panel-body">
+							<form method="post" id="own_css" class="adminform setting_form" action="[[LinkTo:ajax/settings/save]]" class="" style="position: relative; display:block;">
+								<p>Sie haben hier die Möglichkeit, eigene CSS-Angaben für das Layout Ihrer Seite zu definieren.</p>
+
+								<div class="form-group">
+									<label for="own_css_input"><b>Eigenes CSS:</b></label>
+									<textarea class="form-control" style="min-height: 300px;" id="own_css_input" name="css"><%CSS_VALUE%></textarea>
+								</div>
+						
+								<input type="submit" value="Speichern" class="btn btn-success" />
+								<div class="alert alert-success success" style="display:none; color:#587f18;">Die Daten wurden gespeichert.</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div role="tabpanel" class="tab-pane fade" id="impressum">
+		<br />
+			<form method="post" action="[[LinkTo:ajax/settings/save]]" id="settings" class="form-group">
+				<input type="hidden" name="form" value="settings" />
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title">Persönliche Daten</h3>
+							</div>
+							<div class="panel-body">
+								<label for="imprint:firma" class="label_input">Firmenname:</label>
+									<input class="form-control <%IMPRINT:FIRMA_VALIDATE%>" type="text" id="imprint:firma" name="imprint:firma" value="<%IMPRINT:FIRMA_VALUE%>" />
+									
+								<label for="imprint:name" class="label_input">Name:</label>
+									<input class="form-control <%IMPRINT:NAME_VALIDATE%>" type="text" id="imprint:name" name="imprint:name" value="<%IMPRINT:NAME_VALUE%>" />
+								
+								<label for="imprint:vorname" class="label_input">Vorname:</label>
+									<input class="form-control <%IMPRINT:VORNAME_VALIDATE%>" type="text" id="imprint:vorname" name="imprint:vorname" value="<%IMPRINT:VORNAME_VALUE%>" />
+								<label for="imprint:strasse" class="label_input">Straße:</label>
+									<input class="form-control <%IMPRINT:STRASSE_VALIDATE%>" type="text" id="imprint:strasse" name="imprint:strasse" value="<%IMPRINT:STRASSE_VALUE%>" />
+
+								<label for="imprint:plz" class="label_input">PLZ:</label>
+									<input class="form-control <%IMPRINT:PLZ_VALIDATE%>" type="text" id="imprint:plz" name="imprint:plz" value="<%IMPRINT:PLZ_VALUE%>"/>
+								
+								<label for="imprint:ort" class="label_input">Ort:</label>
+									<input class="form-control <%IMPRINT:ORT_VALIDATE%>" type="text" id="imprint:ort" name="imprint:ort" value="<%IMPRINT:ORT_VALUE%>" />
+
+								<label for="imprint:telefon" class="label_input">Telefon:</label>
+									<input class="form-control <%IMPRINT:TELEFON_VALIDATE%>" type="text" id="imprint:telefon" name="imprint:telefon" value="<%IMPRINT:TELEFON_VALUE%>" />
+								
+								<label for="imprint:telefon" class="label_input">Fax:</label>
+									<input class="form-control <%IMPRINT:FAX_VALIDATE%>" type="text" id="imprint:fax" name="imprint:fax" value="<%IMPRINT:FAX_VALUE%>" />
+								
+								<label for="imprint:email" class="label_input">E-Mail:</label>
+									<input class="form-control <%IMPRINT:EMAIL_VALIDATE%>" type="text" id="imprint:email" name="imprint:email" value="<%IMPRINT:EMAIL_VALUE%>" />
+							</div>
+						</div>
+					</div>
+				
+					<div class="col-sm-6">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title">Firmen Daten</h3>
+							</div>
+							<div class="panel-body">
+								
+								<label for="imprint:ustid" class="label_input">Umsatzsteuer-ID:</label>
+									<input class="form-control" type="text" id="imprint:ustid" name="imprint:ustid" value="<%IMPRINT:USTID_VALUE%>" />
+								
+								<label for="imprint:ihk" class="label_input">IHK Reg.-Nummer:</label>
+									<input class="form-control" type="text" id="imprint:ihk" name="imprint:ihk" value="<%IMPRINT:IHK_VALUE%>" />
+									
+								<label for="imprint:hrn" class="label_input">Handelsregister:</label>
+									<input class="form-control" type="text" id="imprint:hrn" name="imprint:hrn" value="<%IMPRINT:HRN_VALUE%>" />
+									
+								<label for="imprint:amtsgericht" class="label_input">Amtsgericht:</label>
+									<input class="form-control" type="text" id="imprint:amtsgericht" name="imprint:amtsgericht" value="<%IMPRINT:AMTSGERICHT_VALUE%>" />
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="clearfix"></div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Sonstige Angaben</h3>
+					</div>
+					<div class="panel-body">
+						<textarea id="imprint:sonstiges" style="min-height: 300px;" class="form-control" name="imprint:sonstiges"><%IMPRINT:SONSTIGES_VALUE%></textarea>
+					</div>
+				</div>
+				<input type="submit" value="Speichern" class="btn btn-success" />
+				<div class="alert alert-success success" style="display:none; color:#587f18;">Die Daten wurden gespeichert.</div>
+			</form>
+		</div>
+
+		<div role="tabpanel" class="tab-pane fade" id="agb">
+			<form method="post" action="[[LinkTo:ajax/settings/save]]" class="form-group">
+				<br />
+				<textarea id="agbs" class="form-control" style="min-height: 300px;" name="agbs"><%AGBS_VALUE%></textarea>
+				<br />
+				<input type="submit" value="Speichern" class="btn btn-success" />
+				<div class="alert alert-success success" style="display:none; color:#587f18;">Die Daten wurden gespeichert.</div>
+			</form>
+		</div>
+
+		<div role="tabpanel" class="tab-pane fade" id="einstellungen">
+		<br />
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+			<div class="panel panel-info">
+				<div class="panel-heading" id="titlegrundeinstellungen">
+					<h4 class="panel-title">
+						<a style="text-decoration: none;" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#webapp" aria-expanded="false" aria-controls="webapp">
+							WebApp
+						</a>
+					</h4>
+				</div>
+				<div id="webapp" class="panel-collapse collapse" role="tabpanel" aria-labelledby="titlegrundeinstellungen">
+					<div class="panel-body">
+						<form method="post" action="[[LinkTo:ajax/settings/save]]" class="adminform setting_form" style="position: relative;">
+							
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group" title="Gibt den WebApp Namen an.">
+                                        <label for="app_name"><b>App Name:</b></label>
+                                        <input type="text" id="app_name" class="form-control" name="app_name" value="<%APP_NAME_VALUE%>" />
+                                    </div>
+
+                                    <div class="form-group" title="Gibt den Favicon Name an, der in dem mobile Ordner verwendet wird (Ohne .png).">
+                                        <label for="appfav_name"><b>App Fav Name:</b></label>
+                                        <input type="text" id="appfav_name" class="form-control" name="appfav_name" value="<%APPFAV_NAME_VALUE%>" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group" title="Zeigt einen Banner auf der Website an, wenn als iOS aufgerufen wird und eine ID hinterlegt ist (ohne id eingeben).">
+                                        <label for="applestoreid"><b>Apple Store ID:</b></label>
+                                        <input type="text" id="applestoreid" class="form-control" name="applestoreid" value="<%APPLESTOREID_VALUE%>" />
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                    <div class="form-group" title="Zeigt einen Banner auf der Website an, wenn als iOS aufgerufen wird und eine ID hinterlegt ist.">
+                                        <label for="googlestoreid"><b>Google Play Store ID:</b></label>
+                                        <input type="text" id="googlestoreid" class="form-control" name="googlestoreid" value="<%GOOGLESTOREID_VALUE%>" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+							
+                            
+                            
+						
+							<input type="submit" value="Speichern" class="btn btn-success" />
+							<div class="alert alert-success success" style="display:none; color:#587f18;">Die Daten wurden gespeichert.</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	
+		<form method="post" action="[[LinkTo:ajax/settings/save]]" class="form-group">
+			<br /><label for="google_analytics"><b>Google Analytics ID:</b></label>
+			<input type="text" id="google_analytics" class="form-control" name="google_analytics" value="<%GOOGLE_ANALYTICS_VALUE%>" /><br />
+
+			<input type="submit" value="Speichern" class="btn btn-success" />
+			<div class="alert alert-success success" style="display:none; color:#587f18;">Die Daten wurden gespeichert.</div>
+		</form>
+	</div>
+		
+	</div>
+</div>
+<script>
+	$('#logo a[href="#logo"]').tab('show');
+	$('#layout a[href="#layout"]').tab('show');
+	$('#einstellungen a[href="#einstellungen"]').tab('show');
+	$('#impressum a[href="#impressum"]').tab('show');
+	$('#agb a[href="#agb"]').tab('show');
+</script>

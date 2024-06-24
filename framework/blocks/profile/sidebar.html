@@ -1,0 +1,44 @@
+<div id="konto-sidebar">
+	<%{email_mb:9}%>
+	<div class="alert alert-danger">
+        <h4><span class="label label-default">MB-Bereich:</span></h4>
+
+		<a href="http://perspektive.nreins.de/anmeldung" target="_blank" class="btn btn-default"><span class="glyphicon glyphicon-education"></span> Schulungsanmeldungen</a>
+		<a href="http://admin.nreins.de" target="_blank" class="btn btn-default"><span class="glyphicon glyphicon-cog"></span> Admin-Bereich</a>
+		<a href="https://mail2.finanzplattform.com/" target="_blank" class="btn btn-default"><span class="glyphicon glyphicon-envelope"></span> E-Mail Administration</a>
+		
+	</div>
+	<%{/email_mb}%>
+
+
+    <%{mb_as:9,10}%>
+    <div class="alert alert-warning">
+        <h4><span class="label label-default">Akzeptanzstellen-Bereich:</span></h4>
+        <a href="[[LinkTo:branchenbuch/showmyas]]" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span> Firma berarbeiten</a>
+        <a href="[[LinkTo:blog/edit/new]]" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span> Blog erstellen</a>
+        <a href="[[LinkTo:branchenbuch/showmyas/shops]]" class="btn btn-default"><span class="glyphicon glyphicon-th-list"></span> Shop-Einstellungen</a>
+        <a href="[[LinkTo:konto/kunden]]" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> GSK-Kunden einsehen</a>
+		
+	</div>
+    <%{/mb_as}%>
+    <div class="alert alert-info">
+        <h4><span class="label label-default">Benutzer-Bereich:</span></h4>
+        <a href="[[LinkTo:konto/profiledit]]" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> Profil berarbeiten</a>
+        <a href="[[LinkTo:konto/addresses]]" class="btn btn-default"><span class="glyphicon glyphicon-home"></span> Adressen verwalten</a>
+        <a href="[[LinkTo:konto/cashback]]" class="btn btn-default"><span class="glyphicon glyphicon-usd"></span> Cashback einsehen</a>
+	<a href="[[LinkTo:shorturl]]" class="btn btn-default"><span class="glyphicon glyphicon-link"></span> Kurz-Urls</a>
+        <a href="[[LinkTo:watchlist]]" onclick="$('#watchlist-navi').toggle(); return false;" class="btn btn-default"><span class="glyphicon glyphicon-bookmark"></span> Merkzettel</a>
+        <%WATCHLIST%>
+<%[xx]%>
+        <a href="[[LinkTo:branchenbuch/ratings]]" class="btn btn-default"><span class="glyphicon glyphicon-star"></span> Bewertungen einsehen</a>
+
+
+        <a href="" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span> Neue Städte</a>
+        <a href="" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span> neue Firmen</a>
+        <a href="" class="btn btn-default"><span class="glyphicon glyphicon-gift"></span> neue Gutscheine</a>
+<%[/xx]%>
+    </div>
+    <div class="alert alert-info">
+        <a href="[[LinkTo:konto/logout]]" class="btn btn-danger" style="margin-top: 0;"><span class="glyphicon glyphicon-off"></span> Logout</a>
+    </div>
+</div>

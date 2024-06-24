@@ -1,0 +1,43 @@
+<%[BLOG]%>
+<div class="blog_entry blog_entry_short<%NOPIC%>">
+	<h3><a href="[[LinkTo:blog/show/<%ID%><%TITLE_URL%>]]"><%TITLE%></a></h3>
+	<div class="row">
+		
+		<div class="<%BLOG_CLASS%>">
+			<div class="blog_author">von <%AUTHOR%> am <%ZEIT%></div>
+			<div class="blog_text"><%SHORT%></div>
+			<div class="btn-group-sm">
+				<a href="[[LinkTo:blog/show/<%ID%><%TITLE_URL%>]]" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> weiterlesen</a>
+				<%ADMINBUTTONS%>
+			</div>
+			<br />
+			<div class="btn-group-xs">
+				<span class="glyphicon glyphicon-tag" style="color:orange;"></span>
+				<%TAGS%>
+			</div>
+		</div>
+                <%IMAGE%>
+	</div>
+	<div class="clearfix"></div>
+</div>
+<%[/BLOG]%>
+
+<%[IMAGE]%>
+<div class="col-sm-4 col-md-3">
+	<a class="thumbnail" href="[[LinkTo:blog/show/<%ID%><%TITLE_URL%>]]">
+		<img src="[[LinkTo:<%IMAGEURL%>]]" alt="<%TITLE%>" style="width:100%;"/>
+    </a>
+</div>
+<%[/IMAGE]%>
+
+
+<%[ADMINBUTTONS]%>
+    <a href="[[LinkTo:blog/edit/<%ID%>]]" title="Beitrag bearbeiten" class="btn btn-success hidden-xs"><i class="material-icons md-18">edit</i></a>
+    <a href="#" onclick="redirectConfirm('[[LinkTo:blog/delete/<%ID%>]]', 'Möchten Sie den Beitrag\n\n&quot;<%TITLE%>&quot;\n\nwirklich unwiderruflich löschen?'); return false;" title="Beitrag löschen" class="btn btn-danger hidden-xs"><i class="material-icons md-18">delete</i></a>
+
+<%[/ADMINBUTTONS]%>
+
+<%[TAG]%><a class="btn btn-default" href="[[LinkTo:blog/tag/<%TAG_URL%>]]" title="<%TAG%>"><%TAG%></a> <%[/TAG]%>
+
+
+<%BLOG%>

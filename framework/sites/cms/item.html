@@ -1,0 +1,70 @@
+
+<%[CMS_NORMAL]%>
+<div class="content_item">
+	<div class="content_box">
+		<%DATE_CREATED%>
+	        <%HEADER%>
+	        <%TEXT%>
+	        <%CONTENT_ADMIN%>
+	        <div class="clearfix"></div>
+	</div>    
+</div>
+<%[/CMS_NORMAL]%>
+
+<%[DATE]%>
+	<div class="news_entry_title"><%DATE_CREATED%></div>
+<%[/DATE]%>
+
+
+<%[CMS_VORSCHAU]%>
+<div class="content_item">
+	<div class="content_vorschau" style="<%MARGIN%>">
+		<img class="vorschau_image" src="[[LinkTo:<%IMAGE%>]]" />
+		<div class="vorschau_content">
+			<div class="vorschau_content_title"><%HEADER%></div>
+			<%TEXT%>
+		</div>    
+		<div class="clearfix"></div> 
+                <a class="vorschau_target" href="[[LinkTo:<%LINK%>]]<%ANKER%>"></a>   
+		<%CONTENT_ADMIN%>
+	</div>
+</div>
+
+<%[/CMS_VORSCHAU]%>
+
+<%[CMS_DOWNLOAD]%>
+<div class="content_item">
+    <div class="content_box">
+	<a href="[[LinkTo:cms/download/<%FILENAME%>]]">
+		<img src="[[LinkTo:res/js/kcfinder/themes/oxygen/img/files/big/<%FILETYPE%>.png]]" style="margin-right:5px; float:left; border:0">
+		<strong style="font-size:1.2em;"><%HEADER%></strong>
+	</a><br />
+	<strong>Dateiname:</strong> <%NAME%><br />
+	<strong>Dateigröße:</strong> <%SIZE%><br />
+        <%TEXT%>
+	<%CONTENT_ADMIN%>
+    </div>    
+</div>
+<%[/CMS_DOWNLOAD]%>
+
+<%[CMS_PICTURE]%>
+<div class="content_item">
+	<div class="thumbnail">
+		<a href="[[LinkTo:res/uploads/<%OWNER%>/images/<%ID%>.jpg]]" data-gallery class="image_link" rel="image_link" title="<%HEADER%>"><img src="[[LinkTo:res/uploads/<%OWNER%>/images/<%ID%>_k.jpg]]"alt="<%HEADER%>"></a><br />
+	</div>
+    <%CONTENT_ADMIN%>
+</div>
+<%[/CMS_PICTURE]%>
+<!--
+		<a href="[[LinkTo:res/uploads/<%OWNER%>/images/<%ID%>.jpg]]" class="image_link" rel="image_link" title="<%HEADER%>"><img src="[[LinkTo:res/uploads/<%OWNER%>/images/<%ID%>_k.jpg]]"alt="<%HEADER%>"></a><br />
+		<img src="[[LinkTo:res/uploads/<%OWNER%>/images/<%ID%>_k.jpg]]"alt="<%HEADER%>">
+-->
+<%[CONTENT_ADMIN]%>
+	<div class="admin">
+		&nbsp;
+		<a href="#" onclick="return false;" title="verschieben"><img src="[[LinkTo:res/images/sort2.png]]" style="cursor: move;" /></a>&nbsp;&nbsp;
+		<a href="#" onclick="getEditor(<%ID%>); return false;" title="bearbeiten"><img src="[[LinkTo:res/images/edit.png]]" /></a>&nbsp;&nbsp;
+		<a href="#" onclick="deleteItem(<%ID%>); return false;" title="löschen"><img src="[[LinkTo:res/images/delete.png]]" /></a>&nbsp;&nbsp;
+		Inhalts-ID: <%ID%>&nbsp;&nbsp;
+	</div>
+<%[/CONTENT_ADMIN]%>

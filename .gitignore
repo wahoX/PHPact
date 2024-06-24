@@ -1,0 +1,4 @@
+vendor
+node_modules
+config.ini
+.DS_Store

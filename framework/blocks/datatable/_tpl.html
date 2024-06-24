@@ -1,0 +1,47 @@
+<table data-datatable-export="true" data-datatable-colvis="true" cellpadding="0" data-role="clickable-rows" cellspacing="0" border="0" class="table table-condensed table-hover datatable">
+    <thead>
+        <tr><%THEAD1%></tr>
+        <tr><%THEAD2%></tr>
+    </thead>
+    <tbody>
+        <%ROWS%>
+    </tbody>
+</table>
+
+
+<%[TH_SEARCHABLE]%>
+            <th style="<%STYLE%>" class="ui-state-default">
+                <label class="input-group-sm">
+                    <input type="text" value="<%SEARCH_VALUE%>" name="search_<%NAME%>" placeholder="<%NAME%>" class="form-control search_init" />
+                </label>
+            </th>
+<%[/TH_SEARCHABLE]%>
+
+<%[TH_SELECT]%>
+            <th style="<%STYLE%>" class="ui-state-default">
+                <label class="input-group-sm">
+                    <select name="search_<%NAME%>" class="search_init form-control"><%OPTIONS%>
+                    </select>
+                </label>
+            </th>
+<%[/TH_SELECT]%>
+
+<%[TH_OPTION]%>
+                        <option value="<%VALUE%>"><%NAME%></option>
+<%[/TH_OPTION]%>
+
+<%[TH2]%>
+            <th><%NAME%></th>
+<%[/TH2]%>
+
+<%[TH_NOT_SEARCHABLE]%>
+            <th style="<%STYLE%>" class="ui-state-default"><input type="hidden" name="search_<%NAME%>"/></th>
+<%[/TH_NOT_SEARCHABLE]%>
+
+<%[ROW]%>
+    <tr><%COLS%></tr>
+<%[/ROW]%>
+
+<%[COL]%>
+            <td <%STYLE%>><%DATA%></td>
+<%[/COL]%>

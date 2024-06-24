@@ -1,0 +1,8 @@
+Constants:
+  ENV: SANDBOX
+  HOME: home
+
+Aliases:
+  login: user/login
+  logout: user/logout
+  404: oops

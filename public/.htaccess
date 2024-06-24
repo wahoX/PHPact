@@ -1,0 +1,16 @@
+<IfModule mod_headers.c>
+    # WEEK
+    <FilesMatch "\.(jpg|jpeg|png|gif|svg|eot|ttf|woff|woff2|js|css)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+
+</IfModule>
+
+
+RewriteEngine on
+
+
+RewriteRule ^res/(.*)$ res/$1 [L]
+RewriteRule ^(manifest.json|browserconfig.xml|sitemap.xml|favicon.ico|robots.txt)$ $1 [L]
+RewriteRule ^(.*)$ index.php?%{QUERY_STRING} [L,QSA]
+

@@ -1,0 +1,91 @@
+<div class="panel panel-default">
+    <div class="panel-heading"><h4>Seo-Daten bearbeiten</h4></div>
+    <div class="panel-body btn-group-sm" style="padding:5px;">
+        <a class="btn btn-primary" href="[[LinkTo:admin/seo]]<%SHOW_FILTER%>">Zeige <%SHOW%></a>
+    </div>
+    <table class="table table-bordered table-condensed table-striped">
+        <thead>
+            <tr>
+                <th>Aktion</th>
+                <th>Url</th>
+                <th>Title</th>
+                <th>#</th>
+                <th>Description</th>
+                <th>#</th>
+                <th>Keywords</th>
+                <th>#</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%ROWS%>
+        </tbody>
+    </table>
+
+<%[ROW]%>
+        <tr class="<%CSS_CLASS%>">
+            <td class="btn-group-xs" style="white-space: nowrap">
+                <a class="btn btn-info" href="http://nreins.de/<%SEO.URL%>" title="Seite ansehen" target="_blank"><span class="glyphicon glyphicon-eye-open"></span></a>
+                <a class="btn btn-success fancybox fancybox.ajax" href="[[LinkTo:ajax/admin/seo/edit/<%SEO.ID%>]]" title="Bearbeiten"><span class="glyphicon glyphicon-pencil"></span></a>
+            </td>
+            <td>/<%SEO.URL%></td>
+            <td><%SEO.TITLE%></td>
+            <td><%TITLE_LENGTH%></td>
+            <td><%SEO.DESCRIPTION%></td>
+            <td><%DESCRIPTION_LENGTH%></td>
+            <td><%SEO.KEYWORDS%></td>
+            <td><%KEYWORDS_LENGTH%></td>
+        </tr>
+<%[/ROW]%>
+
+<%[FORM]%>
+        <form name="form_seo" id="form_zahlungskondition" action="" method="post">
+            <input type="hidden" name="id" value="<%ID%>" />
+            
+            <div class="col-md-12">
+                <h3>Seo-Daten bearbeiten von: &quot;/<%URL%>&quot;</h3>
+            </div>
+            
+            <div class="col-md-12">
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon"><label for="seo-title">Title</label></span>
+                    <textarea name="title" placeholder="SEO-Title" class="form-control" id="seo-title" style="height:50px;"><%SEO_TITLE%></textarea>
+                </div>           
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon"><label for="seo-description">Description</label></span>
+                    <textarea name="description" placeholder="SEO-Description" class="form-control" id="seo-description" style="height:50px;"><%SEO_DESCRIPTION%></textarea>
+                </div>           
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon"><label for="seo-keywords">Keywords</label></span>
+                    <textarea name="keywords" placeholder="SEO-Keywords" class="form-control" id="seo-keywords" style="height:50px;"><%SEO_KEYWORDS%></textarea>
+                </div>           
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="col-md-3">
+                <div class="input-group input-group-sm btn-group-sm">
+                    <span class="input-group-addon"><label style="width:16px;"><span class="glyphicon glyphicon-save"></span></label></span>
+                    <input type="submit" class="btn btn-success form-control" name="absenden" value="Speichern" />
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </form>
+
+        <div class="col-md-12">
+            <h4>Ascii-Zeichen für die Description:</h4>
+        </div>
+        <div style="font-size:16px;font-family:arial, sans-serif;">
+        <%ASCII%>
+        </div>
+        <div class="clearfix"></div>
+
+        <script type="text/javascript">
+            $('#seo-title').maxlength({maxCharacters: 60, statusText:'Zeichen übrig'});
+            $('#seo-description').maxlength({maxCharacters: 160, statusText:'Zeichen übrig'});
+            $('#seo-keywords').maxlength({maxCharacters: 50, statusText:'Zeichen übrig'});
+        </script>
+
+<%[/FORM]%>
+
+<%[ASCII]%>
+    <div class="col-xs-6 col-sm-4 col-md-3">&<%NUMBER%>; - &amp;<%NUMBER%>;</div>
+<%[/ASCII]%>

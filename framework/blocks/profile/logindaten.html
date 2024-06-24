@@ -1,0 +1,25 @@
+        <h4>E-Mail Adresse und Passwort ändern</h4>
+            <form method="post" action="[[LinkTo:konto/savepassword]]" id="password_form">
+                <div class="form-group <%EMAIL_CLASS%>">
+                    <input type="text" class="form-control <%EMAIL_VALIDATE%>" placeholder="E-Mail Adresse" name="email" id="register_email" value="<%EMAIL_VALUE%>" />
+                    <div class="formerror_message"><%OLD_PASSWORD_MESSAGE%></div>
+                </div>
+                <div class="form-group <%OLD_PASSWORD_CLASS%>">
+                    <input type="password" class="form-control <%OLD_PASSWORD_VALIDATE%>" placeholder="altes Passwort" name="old_password" id="old_password" value="" />
+                    <div class="formerror_message"><%OLD_PASSWORD_MESSAGE%></div>
+                </div>
+
+                <div class="form-group <%PASSWORD_CLASS%>">
+                    <input type="password" class="form-control <%PASSWORD_VALIDATE%>" placeholder="Neues Passwort" name="password" id="set_password" value="" />
+                    <div class="formerror_message"><%PASSWORD_MESSAGE%></div>
+                </div>
+
+                <div class="form-group <%PASSWORD2_CLASS%>">
+                    <input type="password" class="form-control <%PASSWORD2_VALIDATE%>" placeholder="Neues Passwort wiederholen" name="password2" id="set_password2" value="" />
+                    <div class="formerror_message"><%PASSWORD2_MESSAGE%></div>
+                </div>
+				<div>
+					<input type="submit" class="btn btn-success btn-raised" value="Speichern" />
+                    <a href="[[LinkTo:]]" class="btn btn-darkr">Abbrechen</a>
+				</div>
+			</form>

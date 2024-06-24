@@ -1,0 +1,45 @@
+	<ul class="nav nav-top">
+		<%NAVI%>
+	</ul>
+	<%EDIT_MENUE%>
+
+<%[EDIT_MENUE]%>
+	<a href="[[LinkTo:admin/menu]]" style="display:block; padding:8px;">Navigation bearbeiten</a>
+<%[/EDIT_MENUE]%>
+
+<%[MENUITEM]%>
+<li class="<%CSSCLASS%>">
+	<a href="[[LinkTo:<%URL%>]]" class="<%CSSCLASS%> <%DROPDOWN%>" <%TARGET%> title="<%TITLE%>"><%NAME%></a>
+	<%SUBNAVI%>
+</li>
+<%[/MENUITEM]%>
+
+<%[SUBNAVI2]%>
+	<div id="subnavi2">
+		<ul>
+			<%NAVI%>
+		</ul>
+	</div>
+<%[/SUBNAVI2]%>
+
+<%[SUBNAVI]%>
+	<ul class="dropdown-menu">
+		<%NAVI%>
+	</ul>
+<%[/SUBNAVI]%>
+
+<%[HOME]%>
+<%[/HOME]%>
+
+<%[LOGIN]%>
+	<a href="#" onclick="$('#login').slideToggle(600); return false;">Login</a>
+<%[/LOGIN]%>
+
+<%[LOGOUT]%>
+	<%MANDANT%>
+	<a href="[[LinkTo:logout]]">Logout</a>
+<%[/LOGOUT]%>
+
+<%[PROFILE]%>
+	<a href="[[LinkTo:user/profile]]">persönliches Profil</a>
+<%[/PROFILE]%>

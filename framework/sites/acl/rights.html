@@ -1,0 +1,22 @@
+<h3>Übersicht der Benutzergruppen inkl. der ausführbaren Aktionen</h3>
+&nbsp;
+<table>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Benutzergruppe</th>
+        <th scope="col">verfügbare Aktionen</th>
+    </tr>
+
+    <%ROWS%>
+
+</table>
+
+<%[ROW]%>
+    <tr>
+        <td><%ID%></td>
+        <td onmouseover="Tip('<b><%NAME%>:</b><br /><%DESCRIPTION%>')"; onmouseout="UnTip();"><%NAME%></td>
+        <td><%ACTIONS%></td>
+    </tr>
+<%[/ROW]%>
+
+<%[ACTION]%><span onmouseover="Tip('<b><%NAME%> (<%ID%>):</b><br /><%DESCRIPTION%>');" onmouseout="UnTip();"><%ID%></span><%[/ACTION]%>
